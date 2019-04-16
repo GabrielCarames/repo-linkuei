@@ -4,4 +4,4 @@ Laboratorio de Programación Orientada a Objetos
 ## LinKuei
 
 + Manuel Cabral
-+ Belén Veira
++ Belen Veira
