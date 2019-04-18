@@ -1,36 +1,98 @@
 /* Primer modelo */
 object samsung{
-	var estado = 'apagado' 
+	var bateria = 50 
+	var estado = false
+	method bateriaActual(){
+		return bateria
+	}
+	method cargarBateria(cantidad){
+		if(estado){
+	 		bateria += cantidad 
+	 		return 'Bateria cargada'
+	 	}else{
+	 		return 'El Celular esta apagado'
+	 	}
+	}
+	
 	method prender(){
-		estado = 'encendido'
-		return 'Celular encendido'
+		estado = true
+		return 'El Celular se prendio'
+	}
+	method sacarFoto(cantidad){
+		if(estado){ 
+			bateria -= cantidad*1.5
+			return 'Captura hecha'
+		}else{
+			return 'El Celular esta apagado'
+		}
 	}
 	method apagar(){
-		estado = 'apagado'
+		estado = false
 		return 'Celular apagado'
 	}
 } 
 /* Segundo modelo */
 object iphone{
-	var estado = 'apagado' 
+	var bateria = 50 
+	var estado = false
+	method bateriaActual(){
+		return bateria
+	}
+	method cargarBateria(cantidad){
+		if(estado){
+	 		bateria += cantidad 
+	 		return 'Bateria cargada'
+	 	}else{
+	 		return 'El Celular esta apagado'
+	 	}
+	}
 	method prender(){
-		estado = 'encendido'
-		return 'Celular encendido'
+		estado = true
+		return 'El Celular se prendio'
+	}
+	method sacarFoto(cantidad){
+		if(estado){ 
+			bateria -= cantidad*1.2
+			return 'Captura hecha'
+		}else{
+			return 'El Celular esta apagado'
+		}
 	}
 	method apagar(){
-		estado = 'apagado'
+		estado = false
 		return 'Celular apagado'
 	}
 } 
 /* Tercer modelo */
 object motorola{
-	var estado = 'apagado' 
+	var bateria = 50 
+	var estado = false
+	method bateriaActual(){
+		return bateria
+	}
+	method cargarBateria(cantidad){
+		if(estado){
+	 		bateria += cantidad 
+	 		return 'Bateria cargada'
+	 	}else{
+	 		return 'El Celular esta apagado'
+	 	}
+	}
+	
 	method prender(){
-		estado = 'encendido'
-		return 'Celular encendido'
+		estado = true
+		return 'El Celular se prendio'
+	}
+	method sacarFoto(cantidad){
+		if(estado){ 
+			bateria -= cantidad*1.7
+			return 'Captura hecha'
+		}else{
+			return 'El Celular esta apagado'
+		}
 	}
 	method apagar(){
-		estado = 'apagado'
+		estado = false
 		return 'Celular apagado'
 	}
-} 
+}  
