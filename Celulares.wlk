@@ -2,98 +2,107 @@
 object samsung{
 	var bateria = 50 
 	var estado = false
+	method prender(){
+		if(estado) return 'El celular ya esta prendido' //si estado es verdadero informa que esta ya esta prendido
+		else{
+			estado = true
+			return 'El celular se prendio'
+		}
+	}
+	method apagar(){
+		if(not estado) return 'El celular ya esta apagado' //si estado es falso informa que esta ya esta apagado
+		else{
+			estado = false
+			return 'Celular apagado'	
+		}
+	}
 	method bateriaActual(){
-		return bateria
+		return 'La bateria actual es: ' + bateria + "%"
 	}
 	method cargarBateria(cantidad){
-		if(bateria == 100){
-			return 'Bateria llena'
-		}else{
+		if(bateria == 100) return 'Bateria llena: ' + bateria + "%"
+		else{
 			if(cantidad + bateria > 100) bateria = 100
 			else bateria += cantidad
+			return 'Carga exitosa'
 		}
-		return bateria
-	}
-	method prender(){
-		estado = true
-		return 'El Celular se prendio'
 	}
 	method sacarFoto(cantidad){
 		if(estado){ 
 			bateria -= cantidad*0.03
-			return 'Captura hecha'
-		}else{
-			return 'El Celular esta apagado'
-		}
-	}
-	method apagar(){
-		estado = false
-		return 'Celular apagado'
+			return 'se tomaron ' + cantidad + ' fotos'
+		}else return 'El celular está apagado'
 	}
 } 
 /* Segundo modelo */
 object iphone{
 	var bateria = 50 
 	var estado = false
+	method prender(){
+		if(estado) return 'El celular ya esta prendido'
+		else{
+			estado = true
+			return 'El celular se prendio'
+		}
+	}
+	method apagar(){
+		if(not estado) return 'El celular ya esta apagado'
+		else{
+			estado = false
+			return 'Celular apagado'	
+		}
+	}
 	method bateriaActual(){
-		return bateria
+		return 'La bateria actual es: ' + bateria + "%"
 	}
 	method cargarBateria(cantidad){
-		if(bateria == 100){
-			return 'Bateria llena'
-		}else{
-			if(cantidad+bateria > 100) bateria = 100
+		if(bateria == 100) return 'Bateria llena: ' + bateria + "%"
+		else{
+			if(cantidad + bateria > 100) bateria = 100
 			else bateria += cantidad
+			return 'Carga exitosa'
 		}
-		return bateria
-	}
-	method prender(){
-		estado = true
-		return 'El Celular se prendio'
 	}
 	method sacarFoto(cantidad){
 		if(estado){ 
 			bateria -= cantidad*0.02
-			return 'Captura hecha'
-		}else{
-			return 'El Celular esta apagado'
-		}
+			return 'se tomaron ' + cantidad + ' fotos'
+		}else return 'El celular está apagado'
 	}
-	method apagar(){
-		estado = false
-		return 'Celular apagado'
-	}
-} 
+}
 /* Tercer modelo */
 object motorola{
 	var bateria = 50 
 	var estado = false
+	method prender(){
+		if(estado) return 'El celular ya esta prendido'
+		else{
+			estado = true
+			return 'El celular se prendio'
+		}
+	}
+	method apagar(){
+		if(not estado) return 'El celular ya esta apagado'
+		else{
+			estado = false
+			return 'Celular apagado'	
+		}
+	}
 	method bateriaActual(){
-		return bateria
+		return 'La bateria actual es: ' + bateria + "%"
 	}
 	method cargarBateria(cantidad){
-		if(bateria == 100){
-			return 'Bateria llena'
-		}else{
-			if(cantidad+bateria > 100) bateria = 100
+		if(bateria == 100) return 'Bateria llena: ' + bateria + "%"
+		else{
+			if(cantidad + bateria > 100) bateria = 100
 			else bateria += cantidad
+			return 'Carga exitosa'
 		}
-		return bateria
-	}
-	method prender(){
-		estado = true
-		return 'El Celular se prendio'
 	}
 	method sacarFoto(cantidad){
 		if(estado){ 
 			bateria -= cantidad*0.04
-			return 'Captura hecha'
-		}else{
-			return 'El Celular esta apagado'
-		}
+			return 'se tomaron ' + cantidad + ' fotos'
+		}else return 'El celular está apagado'
 	}
-	method apagar(){
-		estado = false
-		return 'Celular apagado'
-	}
-} 
+}
