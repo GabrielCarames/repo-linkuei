@@ -1,10 +1,8 @@
 const maximaBateria 	= 100
-const samsungMaxMemory 	= 2000
-const iphoneMaxMemory	= 2700
-const motorolaMaxMemory	= 2200
 
 /* Primer modelo */
 object samsung{
+	const samsungMaxMemory 	= 2000
 	var estado = false
 	var bateria = 50 
 	var memoria = 1000
@@ -62,6 +60,7 @@ object samsung{
 
 /* Segundo modelo */
 object iphone{
+	const iphoneMaxMemory	= 2700
 	var estado = false
 	var bateria = 60 
 	var memoria = 600
@@ -118,6 +117,7 @@ object iphone{
 }
 /* Tercer modelo */
 object motorola{
+	const motorolaMaxMemory	= 2200
 	var estado = false
 	var bateria = 60 
 	var memoria = 1000
