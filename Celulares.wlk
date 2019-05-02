@@ -1,12 +1,11 @@
-const maximaBateria 	= 100
-
 /* Primer modelo */
+const maximaBateria = 100
 object samsung{
 	const samsungMaxMemory 	= 2000
 	var estado = false
 	var bateria = 50 
 	var memoria = 1000
-	
+	var modelo = "Samsung Grandprime"
 	method prender(){
 		if(estado) return 'El celular ya está prendido'
 		else{
@@ -32,6 +31,7 @@ object samsung{
 			return 'Carga exitosa'
 		}
 	}
+
 	method sacarFoto(cantidad, flash){
 		if(estado){
 			if(memoria > samsungMaxMemory) return 'Memoria llena, elimine fotos'
@@ -46,7 +46,9 @@ object samsung{
 				return 'Se tomaron ' + cantidad + ' captura/s con flash: ' + flash	
 			}
 		}else return 'El celular está apagado'
+
 	}
+
 	method eliminarFoto(cantidad){
 		if(estado){
 			if(memoria < 1) return 'Ya no podes eliminar fotos'
@@ -56,15 +58,27 @@ object samsung{
 			}
 		}else return 'El celular está apagado'
 	}
+	method enviarMensaje(destinatario,mensaje){
+		if(destinatario == modelo) return "No podes enviarte un mensaje a vos mismo idiota"
+		else return destinatario.recibirMensaje(mensaje)
+	}
+	method recibirMensaje(mensaje){
+		return "nuevo mensaje para "+ modelo + " " + mensaje 
+	}
 } 
 
+
+
 /* Segundo modelo */
+
 object iphone{
+
 	const iphoneMaxMemory	= 2700
 	var estado = false
 	var bateria = 60 
 	var memoria = 600
-	
+	var modelo = "Iphone X"
+
 	method prender(){
 		if(estado) return 'El celular ya está prendido'
 		else{
@@ -82,6 +96,7 @@ object iphone{
 	method bateriaActual(){
 		return 'La bateria actual es: ' + bateria + "%"
 	}
+
 	method cargarBateria(cantidad){
 		if(bateria == maximaBateria) return 'Bateria llena: ' + bateria + "%"
 		else{
@@ -114,6 +129,13 @@ object iphone{
 			}
 		}else return 'El celular está apagado'
 	}
+	method enviarMensaje(destinatario,mensaje){
+		if(destinatario == modelo) return "No podes enviarte un mensaje a vos mismo idiota"
+		else return destinatario.recibirMensaje(mensaje)
+	}
+	method recibirMensaje(mensaje){
+		return "nuevo mensaje para "+ modelo + " " + mensaje 
+	}
 }
 /* Tercer modelo */
 object motorola{
@@ -121,6 +143,8 @@ object motorola{
 	var estado = false
 	var bateria = 60 
 	var memoria = 1000
+	var modelo = "Motorola J3"
+	
 	method prender(){
 		if(estado) return 'El celular ya está prendido'
 		else{
@@ -167,6 +191,15 @@ object motorola{
 				memoria -= cantidad*0.4
 				return 'Se eliminaron: ' + cantidad + ' fotos' 
 			}
+
 		}else return 'El celular está apagado'
+
+	}
+	method enviarMensaje(destinatario,mensaje){
+		if(destinatario == modelo) return "No podes enviarte un mensaje a vos mismo idiota"
+		else return destinatario.recibirMensaje(mensaje)
+	}
+	method recibirMensaje(mensaje){
+		return "nuevo mensaje para "+ modelo + " " + mensaje 
 	}
 }
