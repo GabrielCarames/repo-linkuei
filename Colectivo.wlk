@@ -19,9 +19,19 @@ object colectivo{
 	var direccion = haciaTerminal
 	var numeroParada = minimaParada
 	var combustible = combustibleMaximo
+	
+	
 }
 
 /* Personas a subir */
 object personas{
-
-}
+  
+  	var cantidadAsubir=0
+  	var cantidadAbajar=0
+  	method pasajerosAsubir(cantidad){
+		cantidadAsubir=cantidad
+	}
+	method cantidadAbajar(cantidad){
+	        cantidadAbajar=cantidad
+        }
+} 
