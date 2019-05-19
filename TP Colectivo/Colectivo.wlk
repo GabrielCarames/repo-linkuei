@@ -51,6 +51,26 @@ object colectivo{
 		if(destino > maximaParada or destino < minimaParada) return no
 		else return si
 	}
+	method establecerPasajeros(cantidad){
+		if(totalPersonas + cantidad < pasajeroMaximo){
+			if(personasSentadas + cantidad > maxAsientos) personasParadas += (personasSentadas + cantidad) - maxAsientos
+			else personasSentadas += cantidad
+			totalPersonas = personasSentadas + personasParadas
+		}else console.println("No queda espacio para más personas")
+	}
+
+	method avanzar(km){
+		if(not self.verificarDestino(km)) return "No podes avanzar esos km"
+		if(not self.verificarCombustible()) return "Ya no queda más combustible"
+		else{
+			self.establecerPasajeros(personas.subir())
+			self.establecerDireccion()
+			self.establecerParada(km)
+			self.consumirCombustible(km)
+			self.verificarCombustible()
+			return "Se llego a la estacion: " + numeroParada
+		}
+	}
 }
 
 /* Personas a subir */
