@@ -74,7 +74,6 @@ object colectivo{
 }
 
 /* Personas a subir */
-/* Personas a subir */
 object personas{
 	var cantidadASubir = 10
 	var cantidadABajar = 0
@@ -86,4 +85,3 @@ object personas{
 	}
 	method bajar() = return cantidadABajar
 }
-} 
