@@ -74,14 +74,16 @@ object colectivo{
 }
 
 /* Personas a subir */
+/* Personas a subir */
 object personas{
-  	var cantidadAsubir=0
-  	var cantidadAbajar=0
-  	method establecerTotalAsubir(cantidad){
-		cantidadAsubir = cantidad
+	var cantidadASubir = 10
+	var cantidadABajar = 0
+	method establecerTotalAsubir(cantidad){ cantidadASubir = cantidad }
+	method establecerTotalABajar(cantidad){ cantidadABajar = cantidad }
+	method subir(){
+		cantidadASubir -= cantidadABajar
+		return cantidadASubir
 	}
-	method establecerTotalAbajar(cantidad){
-	        cantidadAbajar = cantidad
-        }
-
+	method bajar() = return cantidadABajar
+}
 } 
