@@ -1,0 +1,11 @@
+Un colectivo tiene
+.Un recorrido:
+ -Es ida y vuelta
+ -Posee 6 paradas
+ -Empieza y termina en la primera parada
+ -Cada una se separan por 1 kilometro de distancia
+.Capacidad de pasajeros (al inicio está vacio)
+.Cantidad de pasajeros
+.Cantidad de combustible (al inicio está lleno) 
+.Recaudacion (inicia de 0)
+.Una tarifa general de 20$ y 5$ (si es desde la anteultima parada)
