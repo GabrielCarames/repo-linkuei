@@ -38,6 +38,19 @@ object colectivo{
 			return no 
 		}else return si
 	}
+
+	method establecerDireccion(){
+		if(numeroParada == maximaParada and direccion == haciaTerminal) direccion = haciaInicio
+		else if(numeroParada == minimaParada and direccion == haciaInicio) direccion = haciaTerminal
+	}
+	method establecerParada(km){
+		if(direccion == haciaTerminal) numeroParada += km
+		else numeroParada -= km
+	}
+	method verificarDestino(destino){
+		if(destino > maximaParada or destino < minimaParada) return no
+		else return si
+	}
 }
 
 /* Personas a subir */
