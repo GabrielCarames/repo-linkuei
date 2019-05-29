@@ -156,7 +156,7 @@ object recaudacion{
 	var dinero = 0
 	method total() = return dinero
 	method cobrar(parada){
-		if(parada == primeraParada or parada == ultimaParada) dinero += 5
+		if(parada == primeraParada+1 or parada == ultimaParada-1) dinero += 5
 		else dinero += 20
 	}
 	method restar(cantidad){
