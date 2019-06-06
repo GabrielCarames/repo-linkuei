@@ -1,5 +1,5 @@
 object pasajeros{
-	var	property total = 0
+	var property total = 0
 	var property parados = 0
 	var property sentados = 0
 	
