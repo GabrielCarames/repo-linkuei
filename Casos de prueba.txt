@@ -1,0 +1,4 @@
+1. El colectivo se queda sin combustible en Saavedra (70L al empezar).
+2. El colectivo se llena, procede a avanzar y dejar pasajeros en la parada.
+3. El colectivo completa una ida y vuelta sin problemas
+4. El colectivo consume el presupuesto para recargar combustible en la Terminal
