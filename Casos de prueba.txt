@@ -1,4 +1,12 @@
-1. El colectivo se queda sin combustible en Saavedra (70L al empezar).
-2. El colectivo se llena, procede a avanzar y dejar pasajeros en la parada.
-3. El colectivo completa una ida y vuelta sin problemas
-4. El colectivo consume el presupuesto para recargar combustible en la Terminal
+CASOS DE PRUEBA
+
+
+1) Verificar que avanza el colectivo (combustible.verificarFuturoConsumo, hayPersonasEsperando y hayPersonasBajar)
+
+2) Verificar las personas que suben al colectivo en tal parada . 
+
+3) Verificar la cantidad de combustible cuando avanza una parada.
+
+4) Verificar cuanto dinero se recuado por el viaje de ida. 
+
+5) Verificar si la capacidad del colectivo se completo.
