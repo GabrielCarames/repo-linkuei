@@ -1,12 +1,4 @@
 CASOS DE PRUEBA
 
-
-1) Verificar que avanza el colectivo (combustible.verificarFuturoConsumo, hayPersonasEsperando y hayPersonasBajar)
-
-2) Verificar las personas que suben al colectivo en tal parada . 
-
-3) Verificar la cantidad de combustible cuando avanza una parada.
-
-4) Verificar cuanto dinero se recuado por el viaje de ida. 
-
-5) Verificar si la capacidad del colectivo se completo.
+1) Verificar que al subirse cierta cantidad de pasajeros, el colectivo pierde combustible y si ya no tiene mas combustible, no avanzara.
+2) Verifcar que cuando el colectivo este lleno de pasajeros, este no avanzara.
