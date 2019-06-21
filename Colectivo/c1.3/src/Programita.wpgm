@@ -115,4 +115,3 @@ program ts{
 	console.println("Pasajeros: " + pasajeros.actual())
 	console.println("Parada actual: " + colectivo.parada())
 }
-
