@@ -5,7 +5,7 @@ import Combustible.*
 import Recaudacion.*
 
 program ts{
-
+	
 	thames.personasQueSubiran(2)
 	liniers.personasQueSubiran(2)
 	palermo.personasQueSubiran(2)
@@ -21,6 +21,8 @@ program ts{
 	console.println("Cant. personas que subiran en saavedra: ")
 	saavedra.personasQueSubiran(console.readInt())
 	*/
+	
+	
 	console.println("Inicio del recorrido")
 	console.println("Combustible: " + combustible.actual())
 	console.println("Recaudacion: " + recaudacion.actual())
@@ -112,6 +114,5 @@ program ts{
 	console.println("Recaudacion: " + recaudacion.actual())
 	console.println("Pasajeros: " + pasajeros.actual())
 	console.println("Parada actual: " + colectivo.parada())
-	
-	
 }
+

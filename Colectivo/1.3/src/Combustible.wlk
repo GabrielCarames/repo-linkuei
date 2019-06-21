@@ -4,7 +4,7 @@ import Recaudacion.*
 
 object combustible{
 	const minCombustible = 1
-	var property maxCombustible = 100
+	var property maxCombustible = 30
 	var property litros = maxCombustible
 	
 	method actual() = return litros
@@ -13,6 +13,7 @@ object combustible{
 	}
 	method consumir(){
 		litros -= 10 + (pasajeros.actual() * 0.2)
+		if(litros <= minCombustible) litros = 0
 		return litros
 	}
 	method cargar(cantidad){
