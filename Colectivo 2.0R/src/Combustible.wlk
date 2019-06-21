@@ -4,7 +4,7 @@ import Recaudacion.*
 
 object combustible{
 	const minCombustible = 1
-	var property maxCombustible = 120
+	var property maxCombustible = 100
 	var property litros = maxCombustible
 	
 	method actual() = return litros

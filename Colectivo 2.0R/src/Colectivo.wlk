@@ -19,10 +19,11 @@ object colectivo{
 	
 	method avanzar(){
 		if(combustible.verificarFuturoConsumo()) return "No hay combustible para avanzar"
-		if(self.hayPersonasEsperando()) return "AÃºn quedan personas por subir" + " (" + nombreParada.totalSubir() + ")"
-		if(self.hayPersonasBajar()) return "AÃºn quedan personas por bajar" + " ("  + nombreParada.totalBajar() + ")"
+		if(self.hayPersonasEsperando()) return "Aun quedan personas por subir" + " (" + nombreParada.totalSubir() + ")"
+		if(self.hayPersonasBajar()) return "Aun quedan personas por bajar" + " ("  + nombreParada.totalBajar() + ")"
 		self.establecerDireccion()
 		self.establecerParada()
+		self.verificarLlegada()
 		combustible.consumir()
 		return "Se llego a " + nombreParada
 	}
@@ -110,19 +111,27 @@ object colectivo{
 		return true
 	}
 	
+	method consumirTarifa(destino){
+		if(direccion == haciaTerminal){
+			if((self.convertirParada(destino) - numeroParada) == 1) recaudacion.sumar(5)
+			else recaudacion.sumar(20)
+		}
+	}
 	method subirPersona(destino){
-		if(pasajeros.verificarCapacidad()) return "No queda mÃ¡s espacio"
+		if(pasajeros.verificarCapacidad()) return "No queda mas espacio"
+		if(not self.hayPersonasEsperando()) return "Ya no hay personas para subir"
 		if(self.verificarSubida()) return "Aca no suben personas"
-		if(self.verificarDestino(destino)) return "El destino no es valido, verifica la lista de paradas: cartel.paradas()"
-		pasajeros.aumentar()
+		if(self.verificarDestino(destino)) return "El destino no es valido"
 		nombreParada.subirRestar()
-		destino.bajarSumar()
-		return "Se subiÃ³ correctamente un pasajero, destino: " + destino
+		if(!(destino == terminal || destino == inicio)) destino.bajarSumar()
+		pasajeros.aumentar()
+		self.consumirTarifa(destino)
+		return "Se subio correctamente un pasajero, destino: " + destino
 	}
 	
 	method bajarPersonas(){
 		if(not self.verificarBajada()) return "No hay personas a bajar"
-		if(not self.hayPersonasBajar()) return "No hay mÃ¡s personas para bajar"
+		if(not self.hayPersonasBajar()) return "No hay mas personas para bajar"
 		pasajeros.restar(nombreParada.totalBajar())
 		nombreParada.personasQueBajaran(0)
 		return "Se bajaron correctamente los pasajeros"
