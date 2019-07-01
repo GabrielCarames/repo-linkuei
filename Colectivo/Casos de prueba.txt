@@ -1,4 +1,4 @@
 CASOS DE PRUEBA
 
 1) Verificar que al subirse cierta cantidad de pasajeros, el colectivo pierde combustible y si ya no tiene mas combustible, no avanzara.
-2) Verifcar que cuando el colectivo este lleno de pasajeros, este no avanzara.
+2) Verificar que el colectivo llega al limite de pasajeros.
