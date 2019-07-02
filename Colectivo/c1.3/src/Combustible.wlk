@@ -21,7 +21,7 @@ object combustible{
 		if(colectivo.parada() != 5) return "Solo podes recargar en la terminal"
 		recaudacion.restar(cantidad * 2)
 		litros += cantidad
-		return "Se recargo exitosamente el combustible"
+		return "Se recargo exitosamente el combustible" 
 	}
 	
 	

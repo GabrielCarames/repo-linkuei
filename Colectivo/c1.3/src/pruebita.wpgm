@@ -21,11 +21,15 @@ program abc {
 	colectivo.bajarPersonas()
 	colectivo.avanzar()	
 	colectivo.subirPersona(terminal) /* +5 */
-	
+	colectivo.avanzar()	
 	console.println("Inicio del recorrido")
 	console.println("Combustible: " + combustible.actual())
 	console.println("Recaudacion: " + recaudacion.actual())
 	console.println("Pasajeros: " + pasajeros.actual())
 	console.println("Parada actual: " + colectivo.parada())
+	
+	combustible.cargar(20)
+	console.println("Combustible: " + combustible.actual())
+	console.println("Recaudacion: " + recaudacion.actual())
 
 }

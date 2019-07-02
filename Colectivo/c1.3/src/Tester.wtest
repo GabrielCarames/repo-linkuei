@@ -78,6 +78,32 @@ test "Verificar recaudacion"{
 	colectivo.bajarPersonas()
 	colectivo.avanzar()	
 	colectivo.subirPersona(terminal) /* +5 */
-	
+	/* Recaudacion actual 85 */
 	assert.equals(recaudacion.actual(), 85)
+}
+
+test "Verificar re-carga"{
+	thames.personasQueSubiran(1)
+	liniers.personasQueSubiran(2)
+	palermo.personasQueSubiran(1)
+	saavedra.personasQueSubiran(1)
+
+	colectivo.avanzar()
+	colectivo.subirPersona(palermo) /* +20 */
+	colectivo.avanzar()			
+	colectivo.subirPersona(terminal) /* +20 */		
+	colectivo.subirPersona(terminal) /* +20 */		
+	colectivo.avanzar()	
+	colectivo.subirPersona(terminal) /* +20 */
+	colectivo.bajarPersonas()
+	colectivo.avanzar()	
+	colectivo.subirPersona(terminal) /* +5 */
+	colectivo.avanzar()
+	/* Recaudacion actual 85 */
+	/* Combustible actual 68.6 */
+	combustible.cargar(20)
+	/* Recaudacion actual 45 */
+	/* Combustible actual 88.6 */
+	assert.equals(combustible.actual(), 88.6)
+	assert.equals(recaudacion.actual(), 45)
 }
