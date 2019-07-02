@@ -19,12 +19,40 @@ test "Verificacion del combustible"{
 
 /* Segundo caso */
 test "Verificacion de pasajeros"{
-	/* Se establecen las personas a subir */
-	thames.personasQueSubiran(2)
-	liniers.personasQueSubiran(0)
-	palermo.personasQueSubiran(4)
-	saavedra.personasQueSubiran(1)
+	pasajeros.maxCapacidad(15)
+	thames.personasQueSubiran(10)
+	liniers.personasQueSubiran(5)
 	
 	colectivo.avanzar()
-	colectivo.subirPersona()
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	
+	colectivo.avanzar()
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	colectivo.subirPersona(terminal)
+	assert.that(pasajeros.capacidadMaxima())
+} 
+
+test "Verificar recorrido colectivo"{
+	combustible.maxCombustible(120)
+	thames.personasQueSubiran(0)
+	liniers.personasQueSubiran(0)
+	palermo.personasQueSubiran(0)
+	saavedra.personasQueSubiran(0)
+	
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	assert.equals(3, colectivo.parada())
 }

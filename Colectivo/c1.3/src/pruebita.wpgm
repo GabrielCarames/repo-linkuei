@@ -1,0 +1,25 @@
+import Colectivo.*
+import Paradas.*
+import Pasajeros.*
+import Combustible.*
+import Recaudacion.*
+
+program abc {
+	
+	combustible.maxCombustible(10)
+	thames.personasQueSubiran(0)
+	liniers.personasQueSubiran(0)
+	palermo.personasQueSubiran(0)
+	saavedra.personasQueSubiran(0)
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	
+	console.println("Inicio del recorrido")
+	console.println("Combustible: " + combustible.actual())
+	console.println("Recaudacion: " + recaudacion.actual())
+	console.println("Pasajeros: " + pasajeros.actual())
+	console.println("Parada actual: " + colectivo.parada())
+
+}
