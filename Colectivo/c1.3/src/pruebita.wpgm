@@ -6,22 +6,21 @@ import Recaudacion.*
 
 program abc {
 	
-	thames.personasQueSubiran(0)
-	liniers.personasQueSubiran(0)
-	palermo.personasQueSubiran(0)
-	saavedra.personasQueSubiran(0)
-	colectivo.avanzar()
-	colectivo.avanzar()
-	colectivo.avanzar()
-	colectivo.avanzar()
-	colectivo.avanzar()
-	colectivo.avanzar()
-	colectivo.avanzar()
-	colectivo.avanzar()
-	colectivo.avanzar()
-	colectivo.avanzar()
+	thames.personasQueSubiran(1)
+	liniers.personasQueSubiran(2)
+	palermo.personasQueSubiran(1)
+	saavedra.personasQueSubiran(1)
 
-								
+	colectivo.avanzar()
+	colectivo.subirPersona(palermo) /* +20 */
+	colectivo.avanzar()			
+	colectivo.subirPersona(terminal) /* +20 */		
+	colectivo.subirPersona(terminal) /* +20 */		
+	colectivo.avanzar()	
+	colectivo.subirPersona(terminal) /* +20 */
+	colectivo.bajarPersonas()
+	colectivo.avanzar()	
+	colectivo.subirPersona(terminal) /* +5 */
 	
 	console.println("Inicio del recorrido")
 	console.println("Combustible: " + combustible.actual())

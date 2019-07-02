@@ -60,3 +60,24 @@ test "Verificar recorrido colectivo (completo)"{
 	colectivo.avanzar()
 	assert.equals(0, colectivo.parada())
 }
+
+
+test "Verificar recaudacion"{
+	thames.personasQueSubiran(1)
+	liniers.personasQueSubiran(2)
+	palermo.personasQueSubiran(1)
+	saavedra.personasQueSubiran(1)
+
+	colectivo.avanzar()
+	colectivo.subirPersona(palermo) /* +20 */
+	colectivo.avanzar()			
+	colectivo.subirPersona(terminal) /* +20 */		
+	colectivo.subirPersona(terminal) /* +20 */		
+	colectivo.avanzar()	
+	colectivo.subirPersona(terminal) /* +20 */
+	colectivo.bajarPersonas()
+	colectivo.avanzar()	
+	colectivo.subirPersona(terminal) /* +5 */
+	
+	assert.equals(recaudacion.actual(), 85)
+}
