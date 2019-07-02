@@ -7,7 +7,6 @@ import Paradas.*
 
 /* Primer caso */
 test "Verificacion del combustible"{
-	combustible.maxCombustible(30)
 	thames.personasQueSubiran(1)
 	liniers.personasQueSubiran(0)
 	colectivo.avanzar() 
@@ -44,15 +43,20 @@ test "Verificacion de pasajeros"{
 	assert.that(pasajeros.capacidadMaxima())
 } 
 
-test "Verificar recorrido colectivo"{
-	combustible.maxCombustible(120)
+test "Verificar recorrido colectivo (completo)"{
 	thames.personasQueSubiran(0)
 	liniers.personasQueSubiran(0)
 	palermo.personasQueSubiran(0)
 	saavedra.personasQueSubiran(0)
-	
 	colectivo.avanzar()
 	colectivo.avanzar()
 	colectivo.avanzar()
-	assert.equals(3, colectivo.parada())
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	assert.equals(0, colectivo.parada())
 }

@@ -6,7 +6,6 @@ import Recaudacion.*
 
 program abc {
 	
-	combustible.maxCombustible(10)
 	thames.personasQueSubiran(0)
 	liniers.personasQueSubiran(0)
 	palermo.personasQueSubiran(0)
@@ -15,6 +14,14 @@ program abc {
 	colectivo.avanzar()
 	colectivo.avanzar()
 	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+	colectivo.avanzar()
+
+								
 	
 	console.println("Inicio del recorrido")
 	console.println("Combustible: " + combustible.actual())
