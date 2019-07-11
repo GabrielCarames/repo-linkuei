@@ -16,24 +16,31 @@ object poligono{
 	
 	/* Verifica si es un Triangulo */
 	method esTriangulo(){
-		if(mayor.apply(a,b,c) == a) return (mayor.apply(a,b,c) < (b+c))
-		if(mayor.apply(a,b,c) == b) return (mayor.apply(a,b,c) < (a+c))
-		if(mayor.apply(a,b,c) == c) return (mayor.apply(a,b,c) < (a+b))
+		if(mayor.apply(a,b,c) == a) 
+			return (mayor.apply(a,b,c) < (b+c))
+		if(mayor.apply(a,b,c) == b) 
+			return (mayor.apply(a,b,c) < (a+c))
+		if(mayor.apply(a,b,c) == c) 
+			return (mayor.apply(a,b,c) < (a+b))
 		return false
 	}
 	
 	method esEquilatero(){
-		if(self.esTriangulo()) return ((a == b) and (b == c))
+		if(self.esTriangulo()) 
+			return ((a == b) and (b == c))
 		return false
 	}
 	method esEscaleno(){
-		if(self.esTriangulo()) return (a != b and b != c and c != a)
+		if(self.esTriangulo()) 
+			return (a != b and b != c and c != a)
 		return false
 	}
 	
 	method esIsosceles(){
-		if(self.esEquilatero()) return false
-		if(self.esTriangulo()) return (a == b or b == a or a == c or b == c)
+		if(self.esEquilatero()) 
+			return false
+		if(self.esTriangulo()) 
+			return (a == b or b == a or a == c or b == c)
 		return false
 	}
 }
