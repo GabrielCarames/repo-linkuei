@@ -1,0 +1,21 @@
+import Figuras.*
+
+test "Es triangulo" {
+	poligono.establecerLados(12,10,10)
+	assert.that(poligono.esTriangulo())
+}
+
+test "El triangulo es Equilatero" {
+	poligono.establecerLados(10,10,10)
+	assert.equals(poligono.esEquilatero(), poligono.esTriangulo())
+}
+
+test "El triangulo es Escaleno" {
+	poligono.establecerLados(6,10,7)
+	assert.equals(poligono.esEscaleno(), poligono.esTriangulo())
+}
+
+test "El triangulo es Isosceles" {
+	poligono.establecerLados(4,2,4)
+	assert.equals(poligono.esIsosceles(), poligono.esTriangulo())
+}
