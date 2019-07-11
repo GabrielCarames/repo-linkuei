@@ -1,6 +1,6 @@
 object poligono{
 	/* Expresión: saca el mayor de 3 datos */
-	const mayor = { x,y,z => if(x > y and x > z) x else if(y > x and y > z) y else z }
+	const mayor = { x , y, z => if(x > y and x > z) x else if(y > x and y > z) y else z }
 	
 	/* Declaración de los lados */
 	var a = 0
