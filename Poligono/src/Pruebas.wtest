@@ -7,15 +7,15 @@ test "Es triangulo" {
 
 test "El triangulo es Equilatero" {
 	poligono.establecerLados(10,10,10)
-	assert.equals(poligono.esEquilatero(), poligono.esTriangulo())
+	assert.that(poligono.esEquilatero())
 }
 
 test "El triangulo es Escaleno" {
 	poligono.establecerLados(6,10,7)
-	assert.equals(poligono.esEscaleno(), poligono.esTriangulo())
+	assert.that(poligono.esEscaleno())
 }
 
 test "El triangulo es Isosceles" {
 	poligono.establecerLados(4,2,4)
-	assert.equals(poligono.esIsosceles(), poligono.esTriangulo())
+	assert.that(poligono.esIsosceles())
 }
