@@ -22,12 +22,18 @@ object poligono{
 		return false
 	}
 	
-	method esEquilatero() = return ((a == b) and (b == c))
-	
-	method esEscaleno() =  return (a != b and b != c and c != a)
+	method esEquilatero(){
+		if(self.esTriangulo()) return ((a == b) and (b == c))
+		return false
+	}
+	method esEscaleno(){
+		if(self.esTriangulo()) return (a != b and b != c and c != a)
+		return false
+	}
 	
 	method esIsosceles(){
 		if(self.esEquilatero()) return false
-		else return (a == b or b == a or a == c or b == c)
+		if(self.esTriangulo()) return (a == b or b == a or a == c or b == c)
+		return false
 	}
 }
