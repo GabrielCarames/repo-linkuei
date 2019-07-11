@@ -7,7 +7,7 @@ object poligono{
 	var b = 0
 	var c = 0
 
-	/* Setter para cada lado */
+	/* "Constructor" */
 	method establecerLados(_a, _b, _c){
 		a = _a
 		b = _b
