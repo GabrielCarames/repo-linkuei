@@ -14,5 +14,5 @@ object poligono{
 	}
 	method esEquilatero() = return (self.esTriangulo() and (a == b) and (b == c))
 	method esEscaleno() = return (self.esTriangulo() and a != b and b != c and c != a)
-	method esIsosceles() = retrn (not self.esEquilatero() and not self.esEscaleno())
+	method esIsosceles() = return (not self.esEquilatero() and not self.esEscaleno())
 }
