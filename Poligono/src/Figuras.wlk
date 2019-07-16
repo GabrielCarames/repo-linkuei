@@ -7,31 +7,12 @@ object poligono{
 	var property c = 0
 	
 	method esTriangulo(){
-		if(mayor.apply(a,b,c) == a) 
-			return (mayor.apply(a,b,c) < (b+c))
-		if(mayor.apply(a,b,c) == b) 
-			return (mayor.apply(a,b,c) < (a+c))
-		if(mayor.apply(a,b,c) == c) 
-			return (mayor.apply(a,b,c) < (a+b))
+		if(mayor.apply(a,b,c) == a) return (mayor.apply(a,b,c) < (b+c))
+		if(mayor.apply(a,b,c) == b) return (mayor.apply(a,b,c) < (a+c))
+		if(mayor.apply(a,b,c) == c) return (mayor.apply(a,b,c) < (a+b))
 		return false
 	}
-	
-	method esEquilatero(){
-		if(self.esTriangulo()) 
-			return ((a == b) and (b == c))
-		return false
-	}
-	method esEscaleno(){
-		if(self.esTriangulo()) 
-			return (a != b and b != c and c != a)
-		return false
-	}
-	
-	method esIsosceles(){
-		if(self.esEquilatero()) 
-			return false
-		if(self.esTriangulo()) 
-			return (a == b or b == a or a == c or b == c)
-		return false
-	}
+	method esEquilatero() = return (self.esTriangulo() and (a == b) and (b == c))
+	method esEscaleno() = return (self.esTriangulo() and a != b and b != c and c != a)
+	method esIsosceles() = retrn (not self.esEquilatero() and not self.esEscaleno())
 }
