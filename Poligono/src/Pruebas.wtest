@@ -5,40 +5,36 @@ test "Poligono A (12, 10, 10) es triangulo?" {
 	assert.that(poligono.esTriangulo())
 }
 
-test "Poligono A lado mayor es 12?" {
-	poligono.establecerLados(12,10,10)
-	assert.equals(12, poligono.ladoMayor())
-}
-
 test "Poligono A es Isosceles?" {
 	poligono.establecerLados(12,10,10)
 	assert.that(poligono.esIsosceles())
 }
 
-test "Poligono B tiene todos los lados 0, es triangulo?" {
-	poligono.establecerLados(0,0,0)
-	assert.that(poligono.esTriangulo())
+test "Poligono A lado mayor es 12?" {
+	poligono.establecerLados(12,10,10)
+	assert.equals(12, poligono.ladoMayor())
 }
-test "Poligono B es Equilatero?" {
-	poligono.establecerLados(0,0,0)
-	assert.that(poligono.esEquilatero())
+
+test "Poligono B (16,10,8) es triangulo?" {
+	poligono.establecerLados(14,10,8)
+	assert.that(poligono.esTriangulo())
 }
 
 test "Poligono B es Escaleno?" {
-	poligono.establecerLados(0,0,0)
+	poligono.establecerLados(14,10,8)
 	assert.that(poligono.esEscaleno())
 }
 
-test "Poligono B es Isosceles?" {
-	poligono.establecerLados(0,0,0)
-	assert.that(poligono.esIsosceles())
+test "Poligono B lado mayor es 14?" {
+	poligono.establecerLados(14,10,8)
+	assert.equals(14, poligono.ladoMayor())
 }
 
-
-test "Poligono C tiene todos los lados 8, es triangulo?" {
+test "Poligono C (8,8,8) es triangulo?" {
 	poligono.establecerLados(8,8,8)
 	assert.that(poligono.esTriangulo())
 }
+
 test "Poligono C es Equilatero?" {
 	poligono.establecerLados(8,8,8)
 	assert.that(poligono.esEquilatero())
@@ -49,22 +45,23 @@ test "Poligono C lado mayor es 8?" {
 	assert.equals(8, poligono.ladoMayor())
 }
 
-test "Poligono D Isosceles perfecto" {
-	poligono.establecerLados(12,14,14)
+test "Poligono D (0, 0, 0) es triangulo?" {
+	poligono.establecerLados(0,0,0)
+	assert.that(poligono.esTriangulo())
+}
+
+test "Poligono D es Equilatero?" {
+	poligono.establecerLados(0,0,0)
+	assert.that(poligono.esEquilatero())
+}
+
+test "Poligono D es Isosceles?" {
+	poligono.establecerLados(0,0,0)
 	assert.that(poligono.esIsosceles())
 }
 
-test "Poligono D lado mayor" {
-	poligono.establecerLados(12,14,14)
-	assert.equals(14, poligono.ladoMayor())
-}
-
-test "Poligono E Escaleno perfecto" {
-	poligono.establecerLados(12,10,8)
+test "Poligono D es Escaleno?" {
+	poligono.establecerLados(0,0,0)
 	assert.that(poligono.esEscaleno())
 }
 
-test "Poligono E lado mayor" {
-	poligono.establecerLados(12,10,8)
-	assert.equals(12, poligono.ladoMayor())
-}
