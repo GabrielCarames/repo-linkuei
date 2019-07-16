@@ -1,21 +1,50 @@
 import Figuras.*
 
-test "Es triangulo" {
+test "Poligono A tiene los lados 12, 10 y 10 es triangulo?" {
 	poligono.establecerLados(12,10,10)
 	assert.that(poligono.esTriangulo())
 }
 
-test "El triangulo es Equilatero" {
-	poligono.establecerLados(10,10,10)
+test "El lado mayor es doce?" {
+	poligono.establecerLados(12,10,10)
+	assert.equals(12, poligono.ladoMayor())
+}
+
+test "Poligono A es Isosceles?" {
+	poligono.establecerLados(12,10,10)
+	assert.that(poligono.esIsosceles())
+}
+
+test "Poligono B tiene todos los lados 0, es triangulo?" {
+	poligono.establecerLados(0,0,0)
+	assert.that(poligono.esTriangulo())
+}
+test "Poligono B es Equilatero?" {
+	poligono.establecerLados(0,0,0)
 	assert.that(poligono.esEquilatero())
 }
 
-test "El triangulo es Escaleno" {
-	poligono.establecerLados(6,10,7)
+test "Poligono B es Escaleno?" {
+	poligono.establecerLados(0,0,0)
 	assert.that(poligono.esEscaleno())
 }
 
-test "El triangulo es Isosceles" {
-	poligono.establecerLados(4,2,4)
+test "Poligono B es Isosceles?" {
+	poligono.establecerLados(0,0,0)
 	assert.that(poligono.esIsosceles())
+}
+
+
+test "Poligono C tiene todos los lados 8, es triangulo?" {
+	poligono.establecerLados(8,8,8)
+	assert.that(poligono.esTriangulo())
+}
+test "Poligono C es Equilatero?" {
+	poligono.establecerLados(8,8,8)
+	assert.that(poligono.esEquilatero())
+}
+
+test "El lado mayor es 8" {
+	poligono.establecerLados(8,8,8)
+	assert.equals(8, poligono.ladoMayor())
 }
