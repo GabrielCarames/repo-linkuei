@@ -7,9 +7,12 @@ object poligono{
 	var property c = 0
 	
 	method esTriangulo(){
-		if(mayor.apply(a,b,c) == a) return (mayor.apply(a,b,c) < (b+c))
-		if(mayor.apply(a,b,c) == b) return (mayor.apply(a,b,c) < (a+c))
-		if(mayor.apply(a,b,c) == c) return (mayor.apply(a,b,c) < (a+b))
+		if(mayor.apply(a,b,c) == a) 
+			return (mayor.apply(a,b,c) < (b+c))
+		if(mayor.apply(a,b,c) == b) return 
+			(mayor.apply(a,b,c) < (a+c))
+		if(mayor.apply(a,b,c) == c) return 
+			(mayor.apply(a,b,c) < (a+b))
 		return false
 	}
 	method esEquilatero() = return (self.esTriangulo() and (a == b) and (b == c))
