@@ -9,26 +9,31 @@ object television{
 		if(not estado)
 			estado = true
 	}
+	
 	method apagar(){
 		if(estado)
 			estado = false
-		
 	}
 	
-	method mostrarCanales(){
-		return canales
-	}
+	method mostrarListaCanales() = return canales
 	
-	method totalDeCanales(){
-		return canales.size()
-	}
+	method totalDeCanales() = return canales.size()
 	
 	method canalesDisponibles(){
 		if(estado)
-			return canales.count({canal => canal.saberEstado()})
-		else return false
+			return canales.count({canal => canal.estaActivado()})
+		else 
+			return false
 	}
 	
+	method canalActual() = return canales.filter({canal => canal.estaEmitiendo()})
+	
+	method canalesFavoritos(){
+		if(estado)
+			return canalesFavoritos.size()
+		else 
+			return false
+	}
 	
 	method prohibirCanal(nombre){
 		if(estado)

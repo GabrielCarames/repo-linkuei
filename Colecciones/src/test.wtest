@@ -1,0 +1,37 @@
+import Canales.*
+import Television.*
+
+
+test "Cantidad total de canales"{
+	// Son 3 en total
+	television.prender()
+	assert.equals(3, television.totalDeCanales())
+}
+
+test "Un canal disponible" {
+	television.prender()
+	disneyChannel.activar()
+	assert.equals(1, television.canalesDisponibles())
+}
+
+test "Se agrega 2 canales a favoritos" {
+	television.prender()
+	television.agregarCanalAfavoritos(disneyChannel)
+	television.agregarCanalAfavoritos(nationalGeographic)
+	assert.equals(2, television.canalesFavoritos())
+}
+
+test "Se prohibe un canal" {
+	// Quedarian 2 canales
+	television.prender()
+	television.prohibirCanal(disneyChannel)
+	assert.equals(2, television.totalDeCanales())
+}
+
+test "Se transmite el canal Nattional Geographic" {
+	// No pude pensar otra forma de utilizar las listas de la televisón
+	var canal = #{nationalGeographic}
+	television.prender()
+	nationalGeographic.emitir(true)
+	assert.equals(canal, television.canalActual())
+}

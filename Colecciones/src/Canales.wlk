@@ -7,6 +7,7 @@ object disneyChannel{
 		if(not estado)
 			estado = true
 	}
+	
 	method desactivar(){
 		if(estado)
 			estado = false		
@@ -20,8 +21,9 @@ object disneyChannel{
 		
 	}
 	
-	method saberEstado() = return estado
-	method saberNumero() = return numero
+	method estaEmitiendo() = return emitiendo
+	method estaActivado() = return estado
+	method numero() = return numero
 }
 
 object nationalGeographic{
@@ -46,8 +48,9 @@ object nationalGeographic{
 		
 	}
 	
-	method saberEstado() = return estado
-	method saberNumero() = return numero
+	method estaEmitiendo() = return emitiendo
+	method estaActivado() = return estado
+	method numero() = return numero
 }
 
 object cartoonNetwork{
@@ -72,6 +75,7 @@ object cartoonNetwork{
 		
 	}
 	
-	method saberEstado() = return estado
-	method saberNumero() = return numero
+	method estaEmitiendo() = return emitiendo
+	method estaActivado() = return estado
+	method numero() = return numero
 }
