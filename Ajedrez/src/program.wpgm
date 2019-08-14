@@ -1,0 +1,26 @@
+import Piezas.*
+import Tablero.*
+import Equipos.*
+
+program asds{
+
+	const negro = false
+	const blanco = true
+	
+	const peon1 = new Peon(1, 7, negro)
+	const peon2 = new Peon(2, 7, blanco)
+	
+	peon1.verificarPosicion()
+
+	peon2.verificarPosicion()
+	
+	equipoNegro.addPieza(peon1)
+	equipoBlanco.addPieza(peon2)
+	console.println(equipoNegro.mostrarPiezas())
+	console.println(equipoBlanco.mostrarPiezas())
+	
+	equipoBlanco.comerPieza(2,7)
+	console.println(equipoBlanco.mostrarPiezas())
+	console.println(equipoBlanco.mostrarPiezasPerdidas())
+	console.println(equipoBlanco.mostrarPuntaje())
+}
