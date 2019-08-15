@@ -1,9 +1,9 @@
 object tablero{
 	const piezas = []
 	
+	const empate = 3
 	const equipoBlanco = 0
 	const equipoNegro = 1
-	const empate = 3
 	
 	method addPieza(pieza){ return piezas.add(pieza) }	
 	
@@ -23,7 +23,7 @@ object tablero{
 		return piezasBlancas.sum({pieza => pieza.valorPieza()})
 	}
 	method puntajeNegro(){
-		var piezasBlancas = piezas.filter({pieza => not pieza.equipo()})
-		return piezasBlancas.sum({pieza => pieza.valorPieza()})
+		var piezasNegras = piezas.filter({pieza => not pieza.equipo()})
+		return piezasNegras.sum({pieza => pieza.valorPieza()})
 	}
 }
