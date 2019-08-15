@@ -5,9 +5,13 @@ object tablero{
 	const equipoNegro = 1
 	const empate = 3
 	
-	method addPieza(pieza){ return piezas.add(pieza) }	
+	method addPieza(pieza){ 
+		piezas.add(pieza) 
+	}	
 	
-	method eliminarPieza(pieza){ piezas.remove(pieza) }
+	method eliminarPieza(pieza){ 
+		piezas.remove(pieza) 
+	}
 	
 	method quienTieneVentaja(){
 		if(self.puntajeBlanco() == self.puntajeNegro())
