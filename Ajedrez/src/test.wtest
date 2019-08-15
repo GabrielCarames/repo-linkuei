@@ -9,12 +9,6 @@ describe "Posicionamiento"{
 	const peon1 = new Peon(1, 7, negro)
 	const peon2 = new Peon(1, 2, blanco)
 	
-	test "Peon 1 bien posicionado" {
-		assert.that(peon1.verificarPosicion())
-	}
-	
-	test "Peon 2 bien posicionado" {
-		assert.that(peon2.verificarPosicion())
-	}
+	//Falta terminar la parte del movimiento
 }
 
