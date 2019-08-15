@@ -11,13 +11,13 @@ class Pieza{
 		color = _color
 	}
 	
+	method movimientoInicial()
+		
 	method mover(_columna, _fila)
 	
 	method validarMovimiento(_columna, _fila)
 	
-	method colorPieza(){ 
-		return color 
-	}
+	method colorPieza(){ return color }
 
 	method equipoDistinto(pieza){
 		return (pieza.colorPieza() != self.colorPieza())
@@ -35,19 +35,26 @@ class Peon inherits Pieza{
 	method esPeon(pieza){
 		return (pieza.tipoPieza() == tipo)
 	}
+	override method movimientoInicial(){
+		return (fila == 2)
+	}
 	
 	override method validarMovimiento(_columna, _fila){
 		if(_fila < fila  or _columna != columna)
 			return false
-		const piezaEncontrada = tablero.buscarPieza(_columna, _fila)
-		if(self.equipoDistinto(piezaEncontrada) and piezaEncontrada.esPeon())
-			return true
-		return false
+		if(not self.movimientoInicial() and _fila > 2)
+			return false
+		return true
 	}
 	
 	override method mover(_columna, _fila){
 		columna = _columna
 		fila = _fila
+		/* falta pulir */
+		const piezaEncontrada = tablero.buscarPieza(_columna, _fila)
+		if(self.equipoDistinto(piezaEncontrada) and piezaEncontrada.esPeon())
+			return true
+		return false
 	}
 	
 	method valorPieza() = return valor
