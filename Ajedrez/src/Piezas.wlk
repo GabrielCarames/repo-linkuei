@@ -15,7 +15,9 @@ class Pieza{
 	
 	method validarMovimiento(_columna, _fila)
 	
-	method colorPieza(){ return color }
+	method colorPieza(){ 
+		return color 
+	}
 
 	method equipoDistinto(pieza){
 		return (pieza.colorPieza() != self.colorPieza())
