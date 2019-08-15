@@ -1,54 +1,63 @@
-import Equipos.*
+import Tablero.*
 
 class Pieza{
 	var fila
 	var columna
-	var estado
 	var color
 	
 	constructor(_columna, _fila, _color){
 		columna = _columna	
 		fila = _fila
 		color = _color
-		estado = true
+	}
+	
+	method mover(_columna, _fila)
+	
+	method validarMovimiento(_columna, _fila)
+	
+	method colorPieza(){ return color }
+
+	method equipoDistinto(pieza){
+		return (pieza.colorPieza() != self.colorPieza())
 	}
 	
 	method coincidePosicion(_columna, _fila){
 		return (columna == _columna and fila == _fila)
 	}
-	
-	method estadoPieza() = return estado
 }
 
 class Peon inherits Pieza{
 	const valor = 1
 	const tipo = 1
 	 
-	method valorPieza() = return valor
-	
-	method tipoPieza() = return tipo
-
-	
-	method verificarPosicion(){
-		if(columna >= 1 and columna <= 8){
-			if(color)
-				if(fila != 2)
-					estado = false
-			else
-				if(fila != 7)
-					estado = false
-		}
-		return estado
+	method esPeon(pieza){
+		return (pieza.tipoPieza() == tipo)
 	}
 	
+	override method validarMovimiento(_columna, _fila){
+		if(_fila < fila  or _columna != columna)
+			return false
+		const piezaEncontrada = tablero.buscarPieza(_columna, _fila)
+		if(self.equipoDistinto(piezaEncontrada) and piezaEncontrada.esPeon())
+			return true
+		return false
+	}
+	
+	override method mover(_columna, _fila){
+		columna = _columna
+		fila = _fila
+	}
+	
+	method valorPieza() = return valor
+	method tipoPieza() = return tipo
 }
 
+/*
 class Caballo inherits Pieza{
 	const valor = 3
 	const tipo = 2
 	
 	method valorPieza() = return valor
-		
 	method tipoPieza() = return tipo
 	
 }
@@ -58,7 +67,6 @@ class Alfil inherits Pieza{
 	const tipo = 3
 	
 	method valorPieza() = return valor
-	
 	method tipoPieza() = return tipo	
 }
 
@@ -83,3 +91,5 @@ class Rey inherits Pieza{
 	
 	method tipoPieza() = return tipo
 }
+*/
+*/
