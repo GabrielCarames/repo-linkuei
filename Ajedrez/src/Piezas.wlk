@@ -18,7 +18,7 @@ class Pieza{
 	method mover(x, y) /* Sin uso todavia */
 
 	method puedeAvanzar(x, y)
-		
+	
 	method colorPieza(){
 		return color
 	}
@@ -29,6 +29,10 @@ class Pieza{
 	
 	method coincidePosicion(_columna, _fila){
 		return (columna == _columna and fila == _fila)
+	}
+	
+	method valorNulo(dato){ 
+		return (dato == 0)
 	}
 }
 
@@ -48,8 +52,23 @@ class Peon inherits Pieza{
 		return (tablero.hayPiezaEn(x, y))
 	}
 	
+	method moverIzquierdoDiagonal(){
+		if(self.movimientoInicial())
+			return false
+		if(not tablero.hayPiezaEn(columna - 1, fila - 1))
+			return false
+		else{
+			const piezaEncontrada = tablero.identificarPieza(columna - 1, fila - 1)
+			if(not piezaEncontrada.equipoDistinto())
+				return false
+			fila += 1
+			columna += 1
+			return true
+		}
+	}
+
 	method moverHaciaAdelante(cantidad){
-		if(cantidad == 0)
+		if(self.valorNulo(cantidad))
 			return false
 			
 		if(self.movimientoInicial() and cantidad > 2)
