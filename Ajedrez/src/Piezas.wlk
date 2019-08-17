@@ -62,7 +62,7 @@ class Peon inherits Pieza{
 			if(not piezaEncontrada.equipoDistinto())
 				return false
 			fila += 1
-			columna += 1
+			columna -= 1
 			return true
 		}
 	}
