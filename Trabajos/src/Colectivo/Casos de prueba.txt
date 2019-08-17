@@ -1,0 +1,7 @@
+CASOS DE PRUEBA
+Verficar: 
+1) Que al subirse cierta cantidad de pasajeros, el colectivo pierde combustible y si ya no tiene mas combustible, no avanzara.
+2) Que el colectivo llega al limite de pasajeros.
+3) Que el colectivo haga el recorrido completo (tomando en cuenta solamente las paradas).
+4) Que la recaudacion funcione correctamente tomando la primera vuelta del colectivo.
+5) Que se pueda recargar el combustible y verificar la cantidad recargada.
