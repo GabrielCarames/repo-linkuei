@@ -1,3 +1,4 @@
+
 object tablero{
 	const piezas = []
 	
@@ -22,7 +23,11 @@ object tablero{
 			return equipoNegro
 	}
 	
-	method buscarPieza(_columna, _fila){
+	method hayPiezaEn(_columna, _fila){
+		return piezas.any({pieza => pieza.coincidePosicion(_columna, _fila)})
+	}
+	
+	method identificarPieza(_columna, _fila){
 		return piezas.find({pieza => pieza.coincidePosicion(_columna, _fila)})
 	}
 	
