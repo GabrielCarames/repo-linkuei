@@ -12,12 +12,16 @@ class Pieza{
 	}
 	
 	method movimientoInicial()
+	
+	method esIgual(pieza)
+	
+	method mover(x, y) /* Sin uso todavia */
+
+	method puedeAvanzar(x, y)
 		
-	method mover(_columna, _fila)
-	
-	method validarMovimiento(_columna, _fila)
-	
-	method colorPieza(){ return color }
+	method colorPieza(){
+		return color
+	}
 
 	method equipoDistinto(pieza){
 		return (pieza.colorPieza() != self.colorPieza())
@@ -32,35 +36,34 @@ class Peon inherits Pieza{
 	const valor = 1
 	const tipo = 1
 	 
-	method esPeon(pieza){
+	override method esIgual(pieza){
 		return (pieza.tipoPieza() == tipo)
 	}
 	
 	override method movimientoInicial(){
 		return (fila == 2)
 	}
-	
-	method izquierdoDiagonal(_columna, _fila){
-		if(tablero.hayPiezaEn((_columna + 1), (_fila + 2))){
-			const piezaEncontrada = tablero.identificarPieza((_columna + 1), (_fila + 2))
-			if(not self.equipoDistinto(piezaEncontrada))
-				return false
-			return true
-		}else
-			return false
+
+	override method puedeAvanzar(x, y){
+		return (tablero.hayPiezaEn(x, y))
 	}
 	
-	override method validarMovimiento(_columna, _fila){
-		if(_fila < fila  or _columna != columna)
+	method moverHaciaAdelante(cantidad){
+		if(cantidad == 0)
 			return false
-		if(not self.movimientoInicial() and _fila > 2)
+			
+		if(self.movimientoInicial() and cantidad > 2)
 			return false
+			
+		if(not self.movimientoInicial() and cantidad > 1)
+			return false
+		
+		/* Siendo un peon no puede avanzar si hay una pieza de cualquier tipo adelante */
+		if(not self.puedeAvanzar(columna + cantidad, fila))
+			return false
+		
+		columna += valor
 		return true
-	}
-	
-	override method mover(_columna, _fila){
-		columna = _columna
-		fila = _fila
 	}
 	
 	method valorPieza() = return valor
@@ -106,4 +109,5 @@ class Rey inherits Pieza{
 	
 	method tipoPieza() = return tipo
 }
+*/
 */
