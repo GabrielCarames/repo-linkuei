@@ -35,8 +35,19 @@ class Peon inherits Pieza{
 	method esPeon(pieza){
 		return (pieza.tipoPieza() == tipo)
 	}
+	
 	override method movimientoInicial(){
 		return (fila == 2)
+	}
+	
+	method izquierdoDiagonal(_columna, _fila){
+		if(tablero.hayPiezaEn((_columna + 1), (_fila + 2))){
+			const piezaEncontrada = tablero.identificarPieza((_columna + 1), (_fila + 2))
+			if(not self.equipoDistinto(piezaEncontrada))
+				return false
+			return true
+		}else
+			return false
 	}
 	
 	override method validarMovimiento(_columna, _fila){
@@ -50,11 +61,6 @@ class Peon inherits Pieza{
 	override method mover(_columna, _fila){
 		columna = _columna
 		fila = _fila
-		/* falta pulir */
-		const piezaEncontrada = tablero.buscarPieza(_columna, _fila)
-		if(self.equipoDistinto(piezaEncontrada) and piezaEncontrada.esPeon())
-			return true
-		return false
 	}
 	
 	method valorPieza() = return valor
@@ -100,5 +106,4 @@ class Rey inherits Pieza{
 	
 	method tipoPieza() = return tipo
 }
-*/
 */
