@@ -55,7 +55,7 @@ class Peon inherits Pieza{
 	method moverIzquierdoDiagonal(){
 		if(self.movimientoInicial())
 			return false
-		if(not tablero.hayPiezaEn(columna - 1, fila - 1))
+		if(not self.puedeAvanzar(columna - 1, fila - 1))
 			return false
 		else{
 			const piezaEncontrada = tablero.identificarPieza(columna - 1, fila - 1)
