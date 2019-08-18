@@ -10,5 +10,9 @@ describe "Posicionamiento"{
 	const peon2 = new Peon(1, 2, blanco)
 	
 	//Falta terminar la parte del movimiento
+	
+	test "ej"{
+		assert.that(true)
+	}
 }
 

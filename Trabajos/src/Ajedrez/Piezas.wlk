@@ -15,7 +15,7 @@ class Pieza{
 	
 	method esIgual(pieza)
 	
-	method mover(x, y) /* Sin uso todavia */
+	/* method mover(x, y)  Sin uso todavia */
 
 	method puedeAvanzar(x, y)
 	
@@ -128,5 +128,4 @@ class Rey inherits Pieza{
 	
 	method tipoPieza() = return tipo
 }
-*/
 */

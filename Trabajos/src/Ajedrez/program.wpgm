@@ -1,6 +1,5 @@
 import Piezas.*
 import Tablero.*
-import Equipos.*
 
 program asds{
 
