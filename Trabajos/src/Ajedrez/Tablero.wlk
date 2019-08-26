@@ -3,6 +3,7 @@ object tablero{
 	const piezas = []
 	const totalBlanco = { piezas.filter({pieza => pieza.colorPieza()}).sum({pieza => pieza.valorPieza()}) }
 	const totalNegro = { piezas.filter({pieza => not pieza.colorPieza()}).sum({pieza => pieza.valorPieza()}) }
+	
 	const quienTieneVentaja = {x , y => if(x > y) 0 else if(x < y) 1 else 2}
 	
 	method addPieza(pieza){ piezas.add(pieza) }	
@@ -24,6 +25,7 @@ object tablero{
 	method equipoConVentaja(){
 		return quienTieneVentaja.apply(self.puntajeBlanco(), self.puntajeNegro())
 	}
+		
 	
 	method verificarPiezas(){
 		
