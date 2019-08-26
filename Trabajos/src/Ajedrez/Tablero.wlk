@@ -2,25 +2,23 @@
 object tablero{
 	const piezas = []
 	
-	var puntosBlanco = piezas.filter({pieza => pieza.colorPieza()}).sum()
-	var puntosNegro = piezas.filter({pieza => not pieza.colorPieza()}).sum() 
+	const quienTieneVentaja = {x , y => if(x > y) 0 else if(x < y) 1 else 2}
 	
-	/*
-	 * 0 Equipo Blanco
-	 * 1 Equipo Negro
-	 * 3 Empate
-	*/
-	var equipoConVentaja = {equipo => if(puntosBlanco > puntosNegro) 0 else 1}
-	
-	const empate = 3
+	method piezasa() = return piezas
 	
 	method addPieza(pieza){ piezas.add(pieza) }	
 	
 	method eliminarPieza(pieza){ piezas.remove(pieza) }
 	
-	method puntajeBlanco(){ return puntosBlanco }
+	method puntajeBlanco(){ 
+		const piezasBlancas = piezas.filter({pieza => pieza.colorPieza()})
+		return piezasBlancas.sum({pieza => pieza.valorPieza()})
+	}
 	
-	method puntajeNegro(){ return puntosNegro }
+	method puntajeNegro(){
+		const piezasNegras = piezas.filter({pieza => not pieza.colorPieza()})
+		return piezasNegras.sum({pieza => pieza.valorPieza()})
+	}
 	
 	method hayPiezaEn(_columna, _fila){ 
 		return piezas.any({pieza => pieza.coincidePosicion(_columna, _fila)})
@@ -30,14 +28,12 @@ object tablero{
 		return piezas.find({pieza => pieza.coincidePosicion(_columna, _fila)})
 	}
 	
-	method quienTieneVentaja(){
-		if(equipoConVentaja != empate)
-			return equipoConVentaja
-		else
-			return empate
+	
+	method equipoConVentaja(){
+		return quienTieneVentaja.apply(self.puntajeBlanco(), self.puntajeNegro())
 	}
 	
 	method verificarPiezas(){
-		// Si es tablero válido..
+		// Si el tablero es válido..
 	}
 }
