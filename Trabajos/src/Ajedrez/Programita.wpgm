@@ -1,17 +1,17 @@
 import Piezas.*
 import Tablero.*
 
-program asds{
-
-	const negro = false
+program validacion{
+	
 	const blanco = true
+	const negro = false
 	
-	const peon1 = new Peon(1, 7, negro)
-	const peon2 = new Peon(2, 7, blanco)
+	const reyBlanco = new Rey(1, 2 , blanco)
+	const reyNegro = new Rey(1, 3 , negro)
 	
-	tablero.addPieza(peon1)
-	tablero.addPieza(peon2)
-	console.println(tablero.puntajeBlanco())
-	console.println(tablero.puntajeNegro())
-	console.println(tablero.quienTieneVentaja())
+	tablero.addPieza(reyBlanco)
+	tablero.addPieza(reyNegro)
+	
+	tablero.puntajeBlanco()
+	tablero.puntajeNegro()
 }
