@@ -36,4 +36,8 @@ object tablero{
 		else
 			return empate
 	}
+	
+	method verificarPiezas(){
+		// Si es tablero válido..
+	}
 }
