@@ -6,8 +6,8 @@ class Pieza{
 	var color
 	
 	constructor(_columna, _fila, _color){
-		columna = _columna	
 		fila = _fila
+		columna = _columna	
 		color = _color
 	}
 	
@@ -17,7 +17,7 @@ class Pieza{
 	
 	method colorPieza(){ return color }
 
-	method equipoDistinto(pieza){ return (pieza.colorPieza() != self.colorPieza()) }
+	method equipoDistinto(pieza){ return (self.colorPieza() != pieza.colorPieza()) }
 	
 	method coincidePosicion(_columna, _fila){ return (columna == _columna and fila == _fila) }
 }
