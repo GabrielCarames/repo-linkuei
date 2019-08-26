@@ -11,7 +11,8 @@ program validacion{
 	
 	tablero.addPieza(reyBlanco)
 	tablero.addPieza(reyNegro)
-	
-	tablero.puntajeBlanco()
-	tablero.puntajeNegro()
+	console.println(tablero.piezasa())
+	console.println(tablero.puntajeBlanco())
+	console.println(tablero.puntajeNegro())
+	console.println(tablero.equipoConVentaja())
 }
