@@ -1,18 +1,23 @@
 import Piezas.*
 import Tablero.*
 
-describe "Posicionamiento"{
-	
-	const blanco = false
+describe "Movimiento"{
+	const blanco = true
 	const negro = false
 	
-	const peon1 = new Peon(1, 7, negro)
-	const peon2 = new Peon(1, 2, blanco)
+	const reyBlanco = new Rey(4, 1 , blanco)
+	const reyNegro = new Rey(4, 7 , negro)
 	
-	//Falta terminar la parte del movimiento
+	fixture{
+		tablero.addPieza(reyBlanco)
+		tablero.addPieza(reyNegro)
+	}
 	
-	test "ej"{
-		assert.that(true)
+	test "Movimiento Rey Blanco"{
+		assert.that(reyBlanco.puedeMoverseHacia(4, 2))
+	}	
+	
+	test "Movimiento Rey Negro"{
+		assert.that(reyBlanco.puedeMoverseHacia(5, 6))
 	}
 }
-
