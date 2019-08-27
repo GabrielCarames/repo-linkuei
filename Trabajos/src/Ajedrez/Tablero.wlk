@@ -23,7 +23,7 @@ object tablero{
 		return piezas.any({pieza => pieza.coincidePosicion(_columna, _fila)})
 	}
 	
-	method piezaIdentificada(_columna, _fila){
+	method identificarPieza(_columna, _fila){
 		return piezas.find({pieza => pieza.coincidePosicion(_columna, _fila)})
 	}
 	
