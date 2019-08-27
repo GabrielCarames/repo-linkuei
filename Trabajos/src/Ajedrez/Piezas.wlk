@@ -23,14 +23,14 @@ class Pieza{
 class Rey inherits Pieza{
 	const tipo = 6
 	const valor = 4
-	const verificar = {x , y => if((columna - x).abs() != 1 or (fila - y).abs() != 1) false else true}
+	const verificar = {x , y => if((columna - x).abs() != 1 and (fila - y).abs() != 1) false else true}
 	
 	method tipoPieza(){ return tipo }
 	
 	method valorPieza(){ return valor }
 	
 	override method puedeMoverseHacia(_columna, _fila){
-		return (verificar.apply(columna, fila, _columna, _fila))
+		return (verificar.apply(_columna, _fila))
 	}
 	
 }
@@ -46,14 +46,23 @@ class Peon inherits Pieza{
 	
 	method valorPieza(){ return valor }
 	
-	override method puedeMoverseHacia(_columna, _fila){
-		if(not verificarRango.apply(_fila, color))
-			return false
+	method movimientoInicial(){
+		if(color)
+			return (fila == 2)
+		else
+			return (fila == 7)
+	}
+	method maxMovimiento(){
 		var a = 0
 		if(self.movimientoInicial())
 			a = 2
 		else 
 			a = 1
-		return (verificar.apply(fila, _fila, a))
+		return a
+	}
+	override method puedeMoverseHacia(_columna, _fila){
+		if(not verificarRango.apply(_fila, color))
+			return false
+		return (verificar.apply(fila, _fila, self.maxMovimiento()))
 	}
 }
