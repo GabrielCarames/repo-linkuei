@@ -1,4 +1,4 @@
-import Piezas.*
+import example.*
 import Tablero.*
 
 describe "Reyes"{
@@ -13,10 +13,6 @@ describe "Reyes"{
 		tablero.addPieza(reyBlanco)
 		tablero.addPieza(reyNegro)
 	}
-	
-	test "Movimiento Rey Blanco"{
-		assert.that(reyBlanco.puedeMoverseHacia(4, 2))
-	}	
 	
 	test "Movimiento Rey Negro"{
 		assert.that(reyBlanco.puedeMoverseHacia(5, 6))
