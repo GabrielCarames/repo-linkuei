@@ -1,27 +1,48 @@
-import example.*
+import Piezas.*
 import Tablero.*
 
-describe "Reyes"{
+describe "Peon"{
 	const blanco = true
 	const negro = false
 	
+	const peonBlanco = new Peon(2, 2 , blanco)
+	const peonNegro = new Peon(3, 3 , negro)
 	const reyBlanco = new Rey(4, 1 , blanco)
 	const reyNegro = new Rey(4, 7 , negro)
 	const segundoReyNegro = new Rey(3, 7 , negro)
 	
 	fixture{
+		tablero.addPieza(peonBlanco)
+		tablero.addPieza(peonNegro)
 		tablero.addPieza(reyBlanco)
 		tablero.addPieza(reyNegro)
 	}
 	
+	test "Puede moverse el peon blanco"{
+		assert.that(peonBlanco.puedeMoverseHacia(2, 4))
+	}
+	
+	test "Peon blanco puede ganar puntaje"{
+		assert.equals(peonBlanco.cuantoPuntajeGana(3, 3), 1)
+	}
+	
+	test "Puede moverse el peon negro"{
+		assert.that(peonNegro.puedeMoverseHacia(2, 2))
+	}
+	
+	test "Peon negro puede ganar puntaje"{
+		assert.equals(peonBlanco.cuantoPuntajeGana(2, 2), 1)
+	}
+
 	test "Movimiento Rey Negro"{
 		assert.that(reyBlanco.puedeMoverseHacia(5, 6))
 	}
-	
+
 	test "Verificar total de reyes"{
 		assert.that(tablero.validarReyes())
 	}
-	
+
+
 	test "Mas de un rey verificacion"{
 		tablero.addPieza(segundoReyNegro)
 		assert.that(tablero.validarReyes())
