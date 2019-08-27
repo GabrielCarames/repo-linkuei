@@ -11,7 +11,15 @@ class Pieza{
 		color = _color
 	}
 	
-	method puedeMoverseHacia(_columna, _fla)
+	method puedeMoverseHacia(x, y)
+	
+	method cuantoPuntajeGana(x, y){
+		if(self.puedeMoverseHacia(x, y)){
+			const pieza = tablero.identificarPieza(x, y)
+			return pieza.valorPieza()
+		}
+		return 0
+	}
 	
 	method colorPieza(){ return color }
 
@@ -23,16 +31,34 @@ class Pieza{
 class Rey inherits Pieza{
 	const tipo = 6
 	const valor = 4
-	const verificar = {x , y => if((columna - x).abs() != 1 and (fila - y).abs() != 1) false else true}
 	
 	method tipoPieza(){ return tipo }
 	
 	method valorPieza(){ return valor }
 	
-	override method puedeMoverseHacia(_columna, _fila){
-		return (verificar.apply(_columna, _fila))
+	method verificarRango(x, y){
+		if(columna == x and (fila - y).abs() == 1)
+			return true
+		if(fila == y and (columna - x).abs() == 1)
+			return true
+		if((fila - y).abs() == 1 and (columna - x).abs() == 1)
+			return true
+		return false
 	}
 	
+	override method puedeMoverseHacia(x, y){
+		if(columna == x and fila == y)
+			return false
+		if(self.verificarRango(x, y)){
+			if(tablero.hayPiezaEn(x, y)){
+				const pieza = tablero.identificarPieza(x, y)
+				if(pieza.colorPieza() == self.colorPieza())
+					return false
+				return true
+			}
+		}
+		return false
+	}
 }
 
 
@@ -40,29 +66,28 @@ class Peon inherits Pieza{
 	const tipo = 1
 	const valor = 1
 	
-	const verificar = {y, y2 , m => if((y - y2).abs() != m) false}
-	const verificarRango = {y, color => if(color) if(y < fila) false else if(y > fila) false}
 	method tipoPieza(){ return tipo }
 	
 	method valorPieza(){ return valor }
 	
 	method movimientoInicial(){
 		if(color)
-			return (fila == 2)
-		else
-			return (fila == 7)
-	}
-	method maxMovimiento(){
-		var a = 0
-		if(self.movimientoInicial())
-			a = 2
+			return 2
 		else 
-			a = 1
-		return a
+			return 7
 	}
-	override method puedeMoverseHacia(_columna, _fila){
-		if(not verificarRango.apply(_fila, color))
+	
+	override method puedeMoverseHacia(x, y){
+		if(tablero.hayPiezaEn(x, y)){
+			if((fila - y).abs() == 1 and (columna - x).abs() == 1){
+				const pieza = tablero.identificarPieza(x, y)
+				return (not pieza.colorPieza() == self.colorPieza())
+			}
+		}
+		if(columna != x)
 			return false
-		return (verificar.apply(fila, _fila, self.maxMovimiento()))
+		if(fila == self.movimientoInicial() and ((fila - y).abs() == 1 or (fila - y).abs() == 2))
+			return true
+		return false
 	}
 }
