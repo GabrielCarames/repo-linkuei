@@ -1,12 +1,13 @@
 import Piezas.*
 import Tablero.*
 
-describe "Movimiento"{
+describe "Reyes"{
 	const blanco = true
 	const negro = false
 	
 	const reyBlanco = new Rey(4, 1 , blanco)
 	const reyNegro = new Rey(4, 7 , negro)
+	const segundoReyNegro = new Rey(3, 7 , negro)
 	
 	fixture{
 		tablero.addPieza(reyBlanco)
@@ -19,5 +20,14 @@ describe "Movimiento"{
 	
 	test "Movimiento Rey Negro"{
 		assert.that(reyBlanco.puedeMoverseHacia(5, 6))
+	}
+	
+	test "Verificar total de reyes"{
+		assert.that(tablero.validarReyes())
+	}
+	
+	test "Mas de un rey verificacion"{
+		tablero.addPieza(segundoReyNegro)
+		assert.that(tablero.validarReyes())
 	}
 }
