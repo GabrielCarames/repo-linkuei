@@ -13,11 +13,11 @@ al 12/Rey valen dos puntos menos que el valor indicando de la carta (8, 9 y 10)
 Cada jugador, en su turno podrá hacer una jugada juntando una de las cartas que tenga en su poder y tantas como le convenga levantar de la mesa siempre con la condicion de que sumen 15 puntos. Si lo hace las cartas "levantadas" se acumularán en su montón. Si no puede sumar 15 puntos con ninguna de las combinaciones estará obligado a bajar una carta que se sumará a las que están sobre la mesa.
 + Las jugadas donde se recojan todas las cartas de la mesa se denominan escoba y tendrán una puntuación especial.
 + Cuando se haya repartido todas las cartas del mazo se procederá a contabilizar los puntos obtenidos por cada jugador. Para lo cuál será ecesario cotejar las cartas que halla acumulado en su montón empleando el siguiente criterio:
-++ 1 punto para quien tenga más cartas (denominado cartas).
-++ 1 punto para quien tenga el 7 de oros (denominado 7 de velo).
-++ 1 punto para quien tenga más cartas de oros o 2 puntos en caso de tener todas las cartas de oros (denominado oros)
-++ 1 punto para el jugador que tenga más cartas de valor 7, si ambos tienen la misma cantidad no se asigna el punto a ninguno de ellos (denominado setenta)
-++ 1 punto por cada escoba realizada durante la ronda.
+* 1 punto para quien tenga más cartas (denominado cartas).
+* 1 punto para quien tenga el 7 de oros (denominado 7 de velo).
+* 1 punto para quien tenga más cartas de oros o 2 puntos en caso de tener todas las cartas de oros (denominado oros)
+* 1 punto para el jugador que tenga más cartas de valor 7, si ambos tienen la misma cantidad no se asigna el punto a ninguno de ellos (denominado setenta)
+* 1 punto por cada escoba realizada durante la ronda.
 
 ##Consignas
 + Iniciar una partida (todas las cartas en el mazo)
