@@ -2,8 +2,7 @@
 Laboratorio de Programación Orientada a Objetos
 
 ## Dominio
-+ El mazo está compuesto por los **naipes (1 o As, 2, 3, 4, 5, 6 ,7, 10 o Sota, 11 o Caballo y 12 o Rey)** de los cuatro palos**
-(copas, bastos, espadas y oros)**
++ El mazo está compuesto por los **naipes (1 o As, 2, 3, 4, 5, 6 ,7, 10 o Sota, 11 o Caballo y 12 o Rey)** de los cuatro **palos (copa, bastos, espadas y oros)**
 + Los valores de los naipes desde el 1/as al 7 coinciden con el numero indicado de la carta (1,2,3,4,5,6 y 7) y los del 10/Sota
 al 12/Rey valen dos puntos menos que el valor indicando de la carta (8, 9 y 10)
 + Hay solo **2 jugadores.**
@@ -19,7 +18,7 @@ Cada jugador, en su turno podrá hacer una jugada juntando una de las cartas que
 * 1 punto para el jugador que tenga más **cartas de valor 7**, si ambos tienen la misma cantidad no se asigna el punto a ninguno de ellos (denominado **setenta**)
 * 1 punto por cada **escoba** realizada durante la ronda.
 
-##Consignas
+## Consignas
 + Iniciar una partida (todas las cartas en el **mazo**)
 + Repartir las cartas de una **mano**.
 + Mostrar las cartas que deberán
