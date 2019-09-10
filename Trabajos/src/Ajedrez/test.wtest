@@ -1,0 +1,10 @@
+import Cartas.*
+
+describe "Escoba de 15"{
+	const cartita = new Carta(11, 4)
+  
+	test "Nombre de carta" {
+		assert.equals(cartita.saberNombre(), "Caballo de Oros")
+	}
+  
+}
