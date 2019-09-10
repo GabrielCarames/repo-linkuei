@@ -1,39 +1,46 @@
 import Cartas.*
 
 object tablero{
-	// Prueba del rango, añade 12 cartas al mazo.
-	const mazo = (1 .. 12).map({x => new Carta(x, x)})
+	const mazo = []
 	const mesa = []
 	const jugadores = #{}
 	
-	// Estas expresiones serán temporales
-	const agregarCarta = {x, y => x.add(y) }
-	const eliminarCarta = {x, y => x.delete(y) }
+	method quienTira(){ return jugadores.find( {x => x.puedeTirar()} ) }
 	
-	method crearCarta(a, b){
-		return new Carta(a, b)
-	}
+	method cambiarTurnos(){ jugadores.map( {x => x.cambiarTurno() }) }
 	
-	method quienTira(){ return jugadores.any( {x => x.puedeTirar()} ) }
+	method puntajeDeMazo(){ return mazo.sum( {x => x.saberValor()} ) }
 	
 	method puntajeDeMesa(){ return mesa.sum( {x => x.saberValor()} ) }
 	
 	method hayEscobaDeMano(){ return (self.puntajeDeMesa() == 15) }
 	
+	
 	method darCarta(jugador, carta){
 		mazo.delete(carta)
 		jugador.agregarCarta(carta)
+		return carta
 	}
 	
-	method agregarCarta(donde, carta) = agregarCarta.apply(donde, carta)
+	method eliminarCartaMesa(carta){ mesa.delete(carta) }
+		
+	method agregarCartaMesa(carta){ 
+		mesa.add(carta) 
+		if(self.hayEscobaDeMano()){
+			var jugador = self.quienTira()
+			jugador.agregarCarta(mesa)
+			mesa.clear()
+		}
+		self.cambiarTurnos()
+	}
 	
-	method eliminarCarta(donde, carta) = eliminarCarta.apply(donde, carta)
+	method mostrar(x){ return x}
+	
+	method eliminarCartaMazo(carta){ mazo.delete(carta) }
+	
+	method agregarCartaMazo(carta){ mazo.add(carta) }
 	
 	method mostrarMazo(){ return mazo }
-	method mostrarMesa(){ return mesa }
 	
-	/*
-	 	No se porque no me da bola al ejecutarlo en el programa.
-		method mostrar(lista){ return lista }
-	*/
+	method mostrarMesa(){ return mesa }
 }
