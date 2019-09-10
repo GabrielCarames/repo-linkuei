@@ -1,6 +1,9 @@
 import Cartas.*
+import Tablero.*
 
 program abc {
 	var cartita = new Carta(11, 4)
+	tablero.addCartaMazo(cartita)
+	
 	console.println(cartita.saberNombre())
 }
