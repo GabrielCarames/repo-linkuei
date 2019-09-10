@@ -4,8 +4,12 @@ class Carta{
 	var nombre
 	
 	constructor(_numero, _valor, palo){
-		nombre = numero + palo
+		if(_numero > 12 or numero < 1) 
+			_numero = 1
 		numero = _numero
+		if(numero > 10 and numero < 12)
+			numero -= 2
+		nombre = numero + palo
 		valor = _valor
 	}
 	
