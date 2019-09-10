@@ -1,0 +1,6 @@
+import Cartas.*
+
+program abc {
+	var cartita = new Carta(11, 4)
+	console.println(cartita.saberNombre())
+}
