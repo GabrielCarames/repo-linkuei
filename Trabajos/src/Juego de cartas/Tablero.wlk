@@ -1,5 +1,8 @@
+import Cartas.*
+
 object tablero{
-	const mazo = []
+	// Prueba del rango, añade 12 cartas al mazo.
+	const mazo = (1 .. 12).map({x => new Carta(x, x)})
 	const mesa = []
 	const jugadores = #{}
 	
@@ -7,11 +10,15 @@ object tablero{
 	const agregarCarta = {x, y => x.add(y) }
 	const eliminarCarta = {x, y => x.delete(y) }
 	
-	method quienTira() = return jugadores.any( {x => x.puedeTirar()} )
+	method crearCarta(a, b){
+		return new Carta(a, b)
+	}
 	
-	method puntajeDeMesa() = return mesa.sum( {x => x.saberValor()} ) 
+	method quienTira(){ return jugadores.any( {x => x.puedeTirar()} ) }
 	
-	method hayEscobaDeMano() = return (self.puntajeDeMesa() == 15) 
+	method puntajeDeMesa(){ return mesa.sum( {x => x.saberValor()} ) }
+	
+	method hayEscobaDeMano(){ return (self.puntajeDeMesa() == 15) }
 	
 	method darCarta(jugador, carta){
 		mazo.delete(carta)
@@ -22,6 +29,11 @@ object tablero{
 	
 	method eliminarCarta(donde, carta) = eliminarCarta.apply(donde, carta)
 	
-	method mostrar(lista) = return lista
+	method mostrarMazo(){ return mazo }
+	method mostrarMesa(){ return mesa }
 	
+	/*
+	 	No se porque no me da bola al ejecutarlo en el programa.
+		method mostrar(lista){ return lista }
+	*/
 }
