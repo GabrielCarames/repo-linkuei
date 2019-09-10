@@ -1,3 +1,4 @@
+import Tablero.*
 class Jugador{
 	const mano = []
 	var esMano
@@ -6,11 +7,16 @@ class Jugador{
 	
 	method mostrarCartas() = return mano
 	
-	method sacarCarta(carta) = mano.delete(carta)
-	
 	method agregarCarta(carta) = mano.add(carta)
 	
 	method puedeTirar() = return esMano
+	
+	method cambiarTurno(){ esMano = not esMano }
+	
+	method tirarCarta(carta){
+		mano.delete(carta)
+		tablero.agregarCartaMesa(carta)
+	}
 	
 	method puntajeTotal() = return mano.sum( {x => x.saberValor()} )
 }
