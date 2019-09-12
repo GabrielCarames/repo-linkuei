@@ -1,9 +1,24 @@
 import Cartas.*
 import Tablero.*
+import Jugadores.*
 
 program abc {
-	var cartita = new Carta(11, 4)
-	tablero.addCartaMazo(cartita)
+	//const lucas = new Jugador(true)
+	const priCarta = new Carta(11, 4)
+	const segCarta = new Carta(5, 3)
 	
-	console.println(cartita.saberNombre())
+	tablero.agregarCartaMazo(priCarta)
+	tablero.agregarCartaMazo(segCarta)
+	console.println(tablero.mostrarMazo())
+	console.println(tablero.mostrarMesa())
+	//console.println(tablero.puntajeDeMazo())
+	/*
+	
+	const lucas = new Jugador(true)
+	const manu = new Jugador(false)
+	
+	
+	tablero.darCarta(lucas, priCarta)
+	tablero.darCarta(manu, segCarta)
+	*/
 }
