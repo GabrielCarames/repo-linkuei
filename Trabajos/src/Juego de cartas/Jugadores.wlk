@@ -13,9 +13,20 @@ class Jugador{
 	
 	method cambiarTurno(){ esMano = not esMano }
 	
-	method tirarCarta(carta){
-		mano.delete(carta)
-		tablero.agregarCartaMesa(carta)
+	method tieneEscoba(){ 
+		const puntaje = mano.sum({ x => x.saberValor() })
+		return (puntaje == 15)
+	}
+	
+	method agarrarCarta(carta){
+		tablero.eliminarCartaMesa(carta)
+		mano.add(carta)
+		if(self.tieneEscoba()){
+			console.println(self + "ha hecho escoba de mano")
+			tablero.cambiarTurnos()
+			tablero.limpiarMesa()
+			tablero.rellenarMesa()
+		}
 	}
 	
 	method puntajeTotal() = return mano.sum( {x => x.saberValor()} )
