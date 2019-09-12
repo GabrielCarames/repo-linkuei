@@ -7,36 +7,41 @@ object tablero{
 	
 	method quienTira(){ return jugadores.find( {x => x.puedeTirar()} ) }
 	
-	method cambiarTurnos(){ jugadores.map( {x => x.cambiarTurno() }) }
-	
-	method puntajeDeMazo(){ return mazo.sum( {x => x.saberValor()} ) }
+	method cambiarTurnos(){ jugadores.forEach( {x => x.cambiarTurno() }) }
 	
 	method puntajeDeMesa(){ return mesa.sum( {x => x.saberValor()} ) }
 	
-	method hayEscobaDeMano(){ return (self.puntajeDeMesa() == 15) }
-	
+	method hayEscobaMano(){ return (self.puntajeDeMesa() == 15) }
 	
 	method darCarta(jugador, carta){
-		mazo.delete(carta)
+		mazo.remove(carta)
 		jugador.agregarCarta(carta)
 		return carta
 	}
 	
-	method eliminarCartaMesa(carta){ mesa.delete(carta) }
+	method rellenarMesa(){
+		const carta = mazo.anyOne()
+		mesa.add(carta)
+		mazo.agregarCarta(carta)
+	}
+	
+	method eliminarCartaMesa(carta){ mesa.remove(carta) }
 		
-	method agregarCartaMesa(carta){ 
+	method limpiarMesa(){ mesa.clear() }
+	
+	method agregarCartaMesa(carta){
 		mesa.add(carta) 
-		if(self.hayEscobaDeMano()){
+		if(self.hayEscobaMano()){
 			var jugador = self.quienTira()
+			console.println(jugador + "hizo escoba de mano")
 			jugador.agregarCarta(mesa)
-			mesa.clear()
+			self.limpiarMesa()
 		}
 		self.cambiarTurnos()
 	}
 	
-	method mostrar(x){ return x}
+	method eliminarCartaMazo(carta){ mazo.remove(carta) }
 	
-	method eliminarCartaMazo(carta){ mazo.delete(carta) }
 	
 	method agregarCartaMazo(carta){ mazo.add(carta) }
 	
