@@ -1,6 +1,7 @@
 import Tablero.*
 class Jugador{
 	const mano = []
+	const monto = []
 	var esMano
 	
 	constructor(_esMano){ esMano = _esMano }
