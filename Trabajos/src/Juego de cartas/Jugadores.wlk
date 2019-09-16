@@ -25,7 +25,6 @@ class Jugador{
 			console.println(self + "ha hecho escoba de mano")
 			tablero.cambiarTurnos()
 			tablero.limpiarMesa()
-			tablero.rellenarMesa()
 		}
 	}
 	
