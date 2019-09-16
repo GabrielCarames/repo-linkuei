@@ -7,22 +7,25 @@ object tablero{
 	
 	method quienTira(){ return jugadores.find( {x => x.puedeTirar()} ) }
 	
-	method cambiarTurnos(){ jugadores.forEach( {x => x.cambiarTurno() }) }
+	method cambiarTurnos(){ jugadores.forEach( {x => x.cambiarTurno()} ) }
 	
 	method puntajeDeMesa(){ return mesa.sum( {x => x.saberValor()} ) }
 	
 	method hayEscobaMano(){ return (self.puntajeDeMesa() == 15) }
 	
+	method sacarCartaDelMazo(){ return mazo.anyOne() }
+	
 	method darCarta(jugador, carta){
+		const carta = self.sacarCartaDelMazo()
 		mazo.remove(carta)
 		jugador.agregarCarta(carta)
 		return carta
 	}
 	
 	method rellenarMesa(){
-		const carta = mazo.anyOne()
+		const carta = self.sacarCartaDelMazo()
 		mesa.add(carta)
-		mazo.agregarCarta(carta)
+		mazo.remove(carta)
 	}
 	
 	method eliminarCartaMesa(carta){ mesa.remove(carta) }
@@ -30,7 +33,7 @@ object tablero{
 	method limpiarMesa(){ mesa.clear() }
 	
 	method agregarCartaMesa(carta){
-		mesa.add(carta) 
+		mesa.add(carta)
 		if(self.hayEscobaMano()){
 			var jugador = self.quienTira()
 			console.println(jugador + "hizo escoba de mano")
@@ -41,7 +44,6 @@ object tablero{
 	}
 	
 	method eliminarCartaMazo(carta){ mazo.remove(carta) }
-	
 	
 	method agregarCartaMazo(carta){ mazo.add(carta) }
 	
