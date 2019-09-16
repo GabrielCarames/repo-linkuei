@@ -5,13 +5,15 @@ class Jugador{
 	
 	constructor(_esMano){ esMano = _esMano }
 	
-	method mostrarCartas() = return mano
+	method mostrarCartas(){ return mano }
 	
-	method agregarCarta(carta) = mano.add(carta)
+	method agregarCarta(carta){ mano.add(carta) }
 	
-	method puedeTirar() = return esMano
+	method puedeTirar(){ return esMano }
 	
 	method cambiarTurno(){ esMano = not esMano }
+	
+	method puntajeTotal(){ return mano.sum( {x => x.saberValor()} ) }
 	
 	method tieneEscoba(){ 
 		const puntaje = mano.sum({ x => x.saberValor() })
@@ -27,6 +29,4 @@ class Jugador{
 			tablero.limpiarMesa()
 		}
 	}
-	
-	method puntajeTotal() = return mano.sum( {x => x.saberValor()} )
 }
