@@ -6,28 +6,23 @@ class Jugador{
 	
 	constructor(_esMano){ esMano = _esMano }
 	
+	method tirarCarta(carta){
+		if(self.puedeTirar()){
+			mano.remove(carta)
+			tablero.agregarCartaMesa(carta)
+		}
+	}
+	
 	method mostrarCartas(){ return mano }
 	
 	method agregarCarta(carta){ mano.add(carta) }
+	
+	method agregarCartaMonto(carta){ monto.add(carta) }
 	
 	method puedeTirar(){ return esMano }
 	
 	method cambiarTurno(){ esMano = not esMano }
 	
-	method puntajeTotal(){ return mano.sum( {x => x.saberValor()} ) }
-	
-	method tieneEscoba(){ 
-		const puntaje = mano.sum({ x => x.saberValor() })
-		return (puntaje == 15)
-	}
-	
-	method agarrarCarta(carta){
-		tablero.eliminarCartaMesa(carta)
-		mano.add(carta)
-		if(self.tieneEscoba()){
-			console.println(self + "ha hecho escoba de mano")
-			tablero.cambiarTurnos()
-			tablero.limpiarMesa()
-		}
-	}
+	method puntajeTotalMonto(){ return monto.sum( {x => x.saberValor()} ) }
+
 }
