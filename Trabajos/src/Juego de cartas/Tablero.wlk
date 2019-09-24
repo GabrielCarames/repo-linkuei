@@ -34,6 +34,8 @@ object tablero{
 		}
 	}
 	
+	method agregarJugador(jugador){ jugador.add(jugador) }
+	
 	method agregarCartaMesa(carta){ mesa.add(carta) }
 	
 	method limpiarMesa(){ mesa.clear() }
