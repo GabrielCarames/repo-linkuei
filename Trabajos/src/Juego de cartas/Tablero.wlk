@@ -21,22 +21,33 @@ object tablero{
 		return carta
 	}
 	
+	method accionarEscoba(){
+		var jugador = self.quienTira()
+		console.println(jugador + "se le da escoba de mano")
+		jugador.agregarCartaMonto(mesa)
+		self.limpiarMesa()
+		self.cambiarTurnos()
+	}
+	
 	method agregarCartaAleatoriaMesa(){
 		if(mesa.size() <= 4){
 			mesa.add(self.sacarCartaDelMazo())
 			if(self.hayEscobaMano()){
-				var jugador = self.quienTira()
-				console.println(jugador + "se le da escoba de mano")
-				jugador.agregarCarta(mesa)
-				self.limpiarMesa()
-				self.cambiarTurnos()
+				self.accionarEscoba()
 			}
 		}
 	}
 	
-	method agregarJugador(jugador){ jugador.add(jugador) }
+	method agregarCartaMesa(carta){ 
+		mesa.add(carta)
+		if(self.hayEscobaMano()){
+			self.accionarEscoba()
+		}
+	}
 	
-	method agregarCartaMesa(carta){ mesa.add(carta) }
+	method rondaActiva(){ return (mazo.size() != 0) }
+	
+	method agregarJugador(jugador){ jugador.add(jugador) }
 	
 	method limpiarMesa(){ mesa.clear() }
 	
