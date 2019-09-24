@@ -45,6 +45,13 @@ object tablero{
 		}
 	}
 	
+	method repartir(jugador){
+		jugador.agregarCarta(self.sacarCartaDelMazo())
+		jugador.agregarCarta(self.sacarCartaDelMazo())
+		jugador.agregarCarta(self.sacarCartaDelMazo())
+		return jugador.mostrarCartas()
+	}
+	
 	method rondaActiva(){ return (mazo.size() != 0) }
 	
 	method agregarJugador(jugador){ jugador.add(jugador) }
