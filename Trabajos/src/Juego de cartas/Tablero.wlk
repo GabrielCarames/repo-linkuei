@@ -32,17 +32,15 @@ object tablero{
 	method agregarCartaAleatoriaMesa(){
 		if(mesa.size() <= 4){
 			mesa.add(self.sacarCartaDelMazo())
-			if(self.hayEscobaMano()){
+			if(self.hayEscobaMano())
 				self.accionarEscoba()
-			}
 		}
 	}
 	
 	method agregarCartaMesa(carta){ 
 		mesa.add(carta)
-		if(self.hayEscobaMano()){
+		if(self.hayEscobaMano())
 			self.accionarEscoba()
-		}
 	}
 	
 	method repartir(jugador){
