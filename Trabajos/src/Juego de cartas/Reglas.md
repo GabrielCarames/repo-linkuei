@@ -10,7 +10,7 @@ se obtienen haciendo escobas durante la partida y contando el monto total que se
 # Como jugar
 ## Inicio
 + Se hace un sorteo para elegir al jugador que repartirá las cartas.
-+ El repartidor comienza a repartir 3 cartas de su lado derecho a cada jugador, a terminar esto dejará 4 cartas bocaariba en el centro de la mesa.
++ El repartidor comienza a repartir 3 cartas de su lado derecho a cada jugador, a terminar esto dejará 4 cartas descubiertas en el centro de la mesa.
 ## En juego
 + Se tirá una carta en cada turno.
 + Empezará el jugador quien es mano (el que está al lado derecho del repartidor).
