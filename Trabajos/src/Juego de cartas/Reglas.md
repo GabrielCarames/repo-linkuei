@@ -9,7 +9,8 @@ se obtienen haciendo escobas durante la partida y contando el monto total que se
 
 # Valores
 ## Cartas
-+ Desde el 1/as al 7 coinciden con el numero indicado de la carta (1, 2, 3, 4, 5, 6 y 7) y los del 10/Sota al 12/Rey valen dos puntos menos que el valor indicado de la carta (osea 8, 9 y 10)
+Los valores de las cartas desde el 1/as al 7 coinciden con el numero indicado de la carta (1, 2, 3, 4, 5, 6 y 7) y los del 10/Sota al 12/Rey valen dos puntos menos que el valor indicado de la carta (osea 8, 9 y 10)
+
 ## Puntaje
 + Dos puntos por escoba.
 + Quien tenga más cartas, se le ortoga 1 punto.
