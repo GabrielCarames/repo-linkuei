@@ -7,6 +7,16 @@ se obtienen haciendo escobas durante la partida y contando el monto total que se
 + Baraja española de 40 cartas (oro, copa, espada y basto).
 + 2 a 8 jugadores, en esta versión podes jugar solo con la máquina.
 
+# Valores
+## Cartas
++ Desde el 1/as al 7 coinciden con el numero indicado de la carta (1, 2, 3, 4, 5, 6 y 7) y los del 10/Sota al 12/Rey valen dos puntos menos que el valor indicado de la carta (osea 8, 9 y 10)
+## Puntaje
++ Dos puntos por escoba.
++ Quien tenga más cartas, se le ortoga 1 punto.
++ Quien tenga el 7 de oros (7 de velo), se le otorga 1 punto.
++ Quien tenga más cartas de oros se le ortoga 1 punto, o 2 puntos en caso de tener todas las cartas de oros (denominado oros).
++ Quien tenga más cartas de valor 7, si ambos tienen la misma cantidad no se asigna el punto a ninguno de ellos (denominado setenta).
+
 # Como jugar
 ## Inicio
 + Se hace un sorteo para elegir al jugador que repartirá las cartas.
