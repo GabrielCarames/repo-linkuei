@@ -9,14 +9,15 @@ se obtienen haciendo escobas durante la partida y contando el monto total que se
 
 # Valores
 ## Cartas
-Los valores de las cartas desde el 1/as al 7 coinciden con el numero indicado de la carta (1, 2, 3, 4, 5, 6 y 7) y los del 10/Sota al 12/Rey valen dos puntos menos que el valor indicado de la carta (osea 8, 9 y 10)
+Los valores de las cartas desde el 1/as al 7 coinciden con el numero indicado de la carta: 1, 2, 3, 4, 5, 6 y 7
+Exceptuando el intervalo cerrado entre el 10/Sota y 12/Rey, que valen dos puntos menos que el valor indicado de la carta (osea 8, 9 y 10)
 
 ## Puntaje
-+ Dos puntos por escoba.
-+ Quien tenga más cartas, se le ortoga 1 punto.
-+ Quien tenga el 7 de oros (7 de velo), se le otorga 1 punto.
-+ Quien tenga más cartas de oros se le ortoga 1 punto, o 2 puntos en caso de tener todas las cartas de oros (denominado oros).
-+ Quien tenga más cartas de valor 7, si ambos tienen la misma cantidad no se asigna el punto a ninguno de ellos (denominado setenta).
++ Un punto por cada **escoba** que se hizo.
++ Un punto al quien tenga **más cartas**.
++ Un punto por **7 de Oros** adquirido.
++ Un punto al quien tenga mas **cartas de Oro**, si se obtiene todas las **cartas de Oro** son dos puntos.
++ Un punto al quien tenga más cartas de **valor 7**.
 
 # Como jugar
 ## Inicio
