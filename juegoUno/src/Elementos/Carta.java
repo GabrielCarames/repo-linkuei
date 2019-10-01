@@ -8,12 +8,12 @@ public class Carta{
         this.numero = _numero; 
         if(numero == 1)
         	nombre = "Rojo";
+        if(numero == 2)
+        	nombre = "Verde";
     }
-
     public int getNumero() {
     	return this.numero;
     }
-
     public String getNombre(){
         return this.nombre + this.numero;
     }

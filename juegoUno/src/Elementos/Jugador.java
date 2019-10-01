@@ -12,6 +12,8 @@ public class Jugador{
 	}
 	
 	public int mostrarMano(){
+		for (Carta x : cartasEnMano) 
+			System.out.print(x.getNombre());
 		return cartasEnMano.size();
 	}
 	
@@ -22,6 +24,4 @@ public class Jugador{
 	public boolean getMano(){
 		return this.esMano;
 	}
-	
-	
 }
