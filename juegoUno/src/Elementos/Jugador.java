@@ -24,4 +24,8 @@ public class Jugador{
 	public boolean getMano(){
 		return this.esMano;
 	}
+	
+	public void tirarCarta(Carta cartaTirada){
+		cartasEnMano.remove(cartaTirada);
+	}
 }
