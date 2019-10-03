@@ -48,7 +48,8 @@ object tablero{
 			indexTurno++
 		jugadores.get(indexTurno).cambiarTurno()
 	}
-	
+	aca flaco te falto lo mas impoortante de todo :
+	jaodjsaojd =? = 3
 	method obtenerCartaDelMazo(){
 		const carta = cartasEnMazo.anyOne()
 		cartasEnMazo.remove(carta)
